@@ -33,5 +33,12 @@ class IndexController extends Controller
 		return $this->render('add');
 	}
 
+	public function actionDoc()
+	{
+		// return $this->render('add');
+		echo 2;die;
+	}
+
+
 
 }
