@@ -17,7 +17,7 @@
 						<div id="nav-search" class="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
-									<input type="text" autocomplete="off" id="nav-search-input" class="nav-search-input" placeholder="Search ...">
+									<input type="text" autocomplete="off" id="" class="nav-search-input" placeholder="Search ...">
 									<i class="icon-search nav-search-icon"></i>
 								</span>
 							</form>
@@ -38,7 +38,12 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-
+								<span style="font-size:18px">按名称搜索</span><span class="input-icon"><input type="text" autocomplete="off" id="sear-data" placeholder="Search ..." class="nav-search-input"> <i class="icon-search nav-search-icon"></i></span>
+								<button class="btn btn-info" type="button" @click="tosearch">
+										<i class="icon-ok bigger-110"></i>
+										搜
+								</button>
+								<hr />
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="table-responsive">
@@ -84,7 +89,6 @@
 													<button class="btn" type="button" @click="prev_page">
 														上一页
 													</button>
-													
 													<button class="btn" type="button" @click="next_page">
 														下一页
 													</button>
@@ -305,7 +309,7 @@ export default {
   	},
 	first_page:function()
 	{
-		data_init(this,1)
+		data_init(this,1,$('#sear-data').val())
 //		$.ajax({
 //			url:'http://yii.929.vip/?r=index/gift',
 //			type:'get',
@@ -329,7 +333,7 @@ export default {
 		}
 		else{
 			this.p = this.p-1
-			data_init(this,this.p)
+			data_init(this,this.p,$('#sear-data').val())
 		}
 	},
 	next_page:function()
@@ -338,16 +342,16 @@ export default {
 		if((parseInt(this.p)+1) < this.pages)
 		{
 			this.p = parseInt(this.p)+1
-			data_init(this,this.p)
+			data_init(this,this.p,$('#sear-data').val())
 		}
 		else{
 			this.p = this.pages
-			data_init(this,this.p)
+			data_init(this,this.p,$('#sear-data').val())
 		}
 	},
 	end_page:function()
 	{
-		data_init(this,this.pages)
+		data_init(this,this.pages,$('#sear-data').val())
 //		console.log(this)
 //		alert(this.pagenum)
 //		var obj = this
@@ -366,6 +370,13 @@ export default {
 ////				alert(this.pages)
 //			}
 //		})
+	},
+	tosearch:function()
+	{
+//		alert('321321')	
+//		alert($('#sear-data').val())
+		var sear_data = $('#sear-data').val()
+		data_init(this,1,sear_data)
 	},
   	onreadys:function(){
   		$(document).ready(function(){
@@ -396,14 +407,15 @@ export default {
 
 
 
- function data_init(obj,p=1)
+ function data_init(obj,p=1,data='')
  {
+// 	alert(data)
  	$.ajax({
 			url:'http://yii.929.vip/?r=index/gift',
 			type:'get',
 			dataType:'jsonp',
 			jsonp:'call',
-			data:'p='+p,
+			data:'p='+p+'&sear-data='+data,
 			success:function(msg)
 			{
 //				alert(1)
