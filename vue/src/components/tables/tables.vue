@@ -5,13 +5,13 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="#">礼物</a>
 							</li>
 
 							<li>
-								<a href="#">Tables</a>
+								<a href="#">礼物列表</a>
 							</li>
-							<li class="active">Simple &amp; Dynamic</li>
+							
 						</ul><!-- .breadcrumb -->
 
 						<div id="nav-search" class="nav-search">
@@ -30,7 +30,7 @@
 								列表
 								<small>
 									<i class="icon-double-angle-right"></i>
-									User
+									礼物
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -52,28 +52,46 @@
 															</label>-->
 															ID
 														</th>
-														<th>礼物名称</th>
-														<th>礼物价值</th>
-														<th class="hidden-480">礼物说明</th>
+														<th class="center">礼物名称</th>
+														<th class="center">礼物价值</th>
+														<th class="center hidden-480"><i class="icon-time bigger-110 hidden-480"></i>礼物说明</th>
 
-														<th>
-															<i class="icon-time bigger-110 hidden-480"></i>
-															其他
-														</th>
-
-														<th>操作</th>
+														<th class="center">操作</th>
 													</tr>
 												</thead>
 
-												<tbody id="tbox" v-for="value in lists">
-													<tr align="center">
+												<tbody id="tbox">
+													<!--<tr align="center">
 														<td colspan="7">{{value.gift_name}}</td>
-													</tr>
-													<tr>
-														<td>1</td>
+													</tr>-->
+													<tr align="center" v-for="value in lists">
+														<td>{{value.gift_id}}</td>
+														<td>{{value.gift_name}}</td>
+														<td>{{value.gift_money}}</td>
+														<td>{{value.gift_desc}}</td>
+														<td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del" @click="del(value.gift_id)"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td>
+														
 													</tr>
 												</tbody>
 											</table>
+												<div align="center">
+													<span style="font-size:18px">第 {{p}} 页</span>&nbsp;&nbsp;
+													<span style="font-size:18px">共 {{pages}} 页</span>
+													<hr />
+													<button class="btn" type="button" @click="first_page">
+														首页
+													</button>
+													<button class="btn" type="button" @click="prev_page">
+														上一页
+													</button>
+													
+													<button class="btn" type="button" @click="next_page">
+														下一页
+													</button>
+													<button class="btn" type="button" @click="end_page">
+														尾页
+													</button>
+												</div>
 										</div><!-- /.table-responsive -->
 									</div><!-- /span -->
 								</div><!-- /row -->
@@ -201,10 +219,17 @@ export default {
   data () {
     return {
 //    message: '',
-      lists:[]
+		p:1,
+		pages:'',
+      lists:{},
     }
   },
-	mounted: function() {
+  created()
+  {
+  	data_init(this)
+  	
+  },
+//	mounted: function() {
 		
 //			this.$http.jsonp('http://yii.929.vip/?r=index/gift', {}, 
 //			{
@@ -250,16 +275,145 @@ export default {
 //	        console.log(response)
 ////			alert(2)
 //	    });   
-	},
+//	},
   methods:
   {
+  	del:function(id)
+  	{
+//		alert('测试删除')
+//		alert(id)
+		$.ajax({
+			url:'http://yii.929.vip/?r=index/g_del',
+			type:'get',
+			dataType:'jsonp',
+			data:'gift_id='+id,
+//			jsonp:'call',
+			success:function(msg)
+			{
+				if(msg.code == 200)
+				{
+					alert('删除成功')
+//					location.href="/"
+					location.href="/#/t_add"
+				}
+				else
+				{
+					alert('操作失败')
+				}
+			}
+		})
+  	},
+	first_page:function()
+	{
+		data_init(this,1)
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/gift',
+//			type:'get',
+//			dataType:'jsonp',
+//			data:'p=2',
+//			jsonp:'call',
+//			success:function(msg)
+//			{
+//				console.log(msg)
+//				this.lists = msg.data
+//				this.p = msg.p
+//				this.pages = msg.pages
+//			}
+//		})
+	},
+	prev_page:function()
+	{
+		if(this.p-1<1)
+		{
+			this.p = 1
+		}
+		else{
+			this.p = this.p-1
+			data_init(this,this.p)
+		}
+	},
+	next_page:function()
+	{
+//		alert(parseInt(this.p)+1)
+		if((parseInt(this.p)+1) < this.pages)
+		{
+			this.p = parseInt(this.p)+1
+			data_init(this,this.p)
+		}
+		else{
+			this.p = this.pages
+			data_init(this,this.p)
+		}
+	},
+	end_page:function()
+	{
+		data_init(this,this.pages)
+//		console.log(this)
+//		alert(this.pagenum)
+//		var obj = this
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/gift',
+//			type:'get',
+//			dataType:'jsonp',
+//			data:'p='+this.pages,
+//			jsonp:'call',
+//			success:function(msg)
+//			{
+//				console.log(msg)
+//				this.lists = msg.data
+//				this.p = msg.p
+//				this.pages = msg.pages
+////				alert(this.pages)
+//			}
+//		})
+	},
   	onreadys:function(){
   		$(document).ready(function(){
   		alert('好了')
   	})
+  	},
+  	end_pages(){
+  		data_init(this,this.pages)
+//		alert(5)
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/gift',
+//			type:'get',
+//			dataType:'jsonp',
+//			data:'p='+this.pages,
+//			jsonp:'call',
+//			success:function(msg)
+//			{
+//				console.log(msg)
+//				this.p = msg.p
+//				this.pages = msg.pages
+//				this.lists = ''
+////				alert(this.pages)
+//			}
+//		})
   	}
   }
 }
+
+
+
+ function data_init(obj,p=1)
+ {
+ 	$.ajax({
+			url:'http://yii.929.vip/?r=index/gift',
+			type:'get',
+			dataType:'jsonp',
+			jsonp:'call',
+			data:'p='+p,
+			success:function(msg)
+			{
+//				alert(1)
+//				console.log(msg)
+				obj.lists = msg.data
+				obj.p = msg.p
+				obj.pages = msg.pages
+			}
+		})
+ }
 
 try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 </script>

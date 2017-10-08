@@ -5,13 +5,13 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="#">用户</a>
 							</li>
 
 							<li>
-								<a href="#">Tables</a>
+								<a href="#">用户列表</a>
 							</li>
-							<li class="active">Simple &amp; Dynamic</li>
+							
 						</ul><!-- .breadcrumb -->
 
 						<div id="nav-search" class="nav-search">
@@ -60,14 +60,30 @@
 															<i class="icon-time bigger-110 hidden-480"></i>
 															YY号
 														</th>
-
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															用户类型	
+														</th>
+														<th>用户状态</th>
 														<th>功能</th>
 													</tr>
 												</thead>
 
 												<tbody id="tbox">
-													<tr align="center">
+													<!--<tr align="center">
 														<td colspan="7">加载中</td>
+													</tr>-->
+													<tr v-for="val in lists">
+														<td  align="center">{{val.user_id}}</td>
+														<td  align="center">{{val.user_name}}</td>
+														<td  align="center">{{val.user_phone}}</td>
+														<td  align="center">{{val.user_email}}</td>
+														<td  align="center">{{val.user_yy}}</td>
+														<td  align="center" v-if="val.user_status == 1">主播</td>
+														<td  align="center" v-else>普通用户</td>
+														<td  align="center" v-if="val.is_del == 0">正常</td>
+														<td  align="center" v-else>已封号</td>
+														<td  align="center"><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td>
 													</tr>
 													<!--<tr>
 														<td class="center">
@@ -167,38 +183,43 @@ export default {
   name: 'tables',
   data () {
     return {
-      message: ''
+      message: '',
+      lists:{}
     }
   },
-	mounted: function() {
-		$.ajax({
-			url:'http://yii.929.vip/?r=index/show_userlist',
-			type:'get',
-			dataType:'jsonp',
-			jsonp:'call',
-			success:function(msg)
-			{
-//				$('#tbox').html(msg)
-//				console.log(msg)
-//				alert(2)
-				var obj = '';
-				$.each(msg,function(k,v){
-					obj += '<tr><td class="center"><input type="hidden" value="'+v.user_id+'" />'+v.user_id+'</td><td>'+v.user_name+'</td><td>'+v.user_phone+'</td><td>'+v.user_email+'</td><td>'+v.user_yy+'</td><td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td></tr>'
-				})
-				$('#tbox').html(obj)
-			}
-		})
-//		alert(3)
-//			this.$http.jsonp('http://yii.929.vip/?r=index/api', {}, {
-//	        emulateJSON: true
-//	    }).then(function(response) {
-////	        this.userList = response.body
-//			alert(1)
-//	    }, function(response) {
-//	        console.log(response)
-////			alert(2)
-//	    });   
-	},
+  created()
+  {
+  	data_init(this)
+  },
+//	mounted: function() {
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/show_userlist',
+//			type:'get',
+//			dataType:'jsonp',
+//			jsonp:'call',
+//			success:function(msg)
+//			{
+////				$('#tbox').html(msg)
+////				console.log(msg)
+////				alert(2)
+//				var obj = '';
+//				$.each(msg,function(k,v){
+//					obj += '<tr><td class="center"><input type="hidden" value="'+v.user_id+'" />'+v.user_id+'</td><td>'+v.user_name+'</td><td>'+v.user_phone+'</td><td>'+v.user_email+'</td><td>'+v.user_yy+'</td><td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td></tr>'
+//				})
+//				$('#tbox').html(obj)
+//			}
+//		})
+////		alert(3)
+////			this.$http.jsonp('http://yii.929.vip/?r=index/api', {}, {
+////	        emulateJSON: true
+////	    }).then(function(response) {
+//////	        this.userList = response.body
+////			alert(1)
+////	    }, function(response) {
+////	        console.log(response)
+//////			alert(2)
+////	    });   
+//	},
   methods:
   {
   	dels:function(){
@@ -216,7 +237,25 @@ export default {
   	}
   }
 }
-
+function data_init(obj)
+{
+//	alert(3)
+	$.ajax({
+			url:'http://yii.929.vip/?r=index/show_userlist',
+			type:'get',
+			dataType:'jsonp',
+			jsonp:'call',
+			success:function(msg)
+			{
+//				var obj = '';
+//				$.each(msg,function(k,v){
+//					obj += '<tr><td class="center"><input type="hidden" value="'+v.user_id+'" />'+v.user_id+'</td><td>'+v.user_name+'</td><td>'+v.user_phone+'</td><td>'+v.user_email+'</td><td>'+v.user_yy+'</td><td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td></tr>'
+//				})
+//				$('#tbox').html(obj)
+				obj.lists = msg
+			}
+		})
+}
 try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 </script>
 

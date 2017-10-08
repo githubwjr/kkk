@@ -44,6 +44,7 @@ import t_add from '@/components/tables/add'
 import user_add from '@/components/ui/user_add'
 import rooms from '@/components/room/rooms'
 import room_add from '@/components/room/room_add'
+import moneys from '@/components/money/moneys'
 
 //登录页面
 import login from '@/components/login'
@@ -78,6 +79,19 @@ export default new Router({
     	name:'room_add',
     	component:room_add
     },
+    {
+    	path:'/moneys',
+    	name:'moneys',
+    	component:moneys
+    },
+
+
+
+
+
+
+
+
     //接口调接
     {
   		path: '/echostr',

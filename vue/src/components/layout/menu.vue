@@ -38,12 +38,12 @@
 						</router-link>
 						</li>
 
-						<li>
+						<!--<li>
 							<router-link to="/typography" class="router-item">
 								<i class="icon-text-width"></i>
 								<span class="menu-text"> 文字排版 </span>
 							</router-link>
-						</li>
+						</li>-->
 
 						<li>
 							<a class="dropdown-toggle" href="#">
@@ -187,6 +187,32 @@
 										添加房间
 									</router-link>
 								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-toggle" href="#">
+								<i class="icon-list"></i>
+								<span class="menu-text"> 资产 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								
+								<li>
+									<router-link to="/moneys" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										资产
+									</router-link>
+								</li>
+								
+								<li>
+									<router-link to="/room_add" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										充值
+									</router-link>
+								</li>
+								
 							</ul>
 						</li>
 <!--
