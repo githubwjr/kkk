@@ -111,6 +111,11 @@
 
             <div class="duya-header-control clearfix">
 
+                <div class="hy-nav-right">
+                    <a class="hy-nav-title clickstat" href="<?=url('/login')?>" target="_blank"><span class="title">登录|注册</span></a>
+
+                </div>
+
                 <div class="hy-nav-right hy-nav-kaibo">
 
                     <a class="hy-nav-title clickstat" href="http://www.huya.com/e/zhubo" eid="click/navi/kaibo" eid_desc="点击/导航/开播" target="_blank">

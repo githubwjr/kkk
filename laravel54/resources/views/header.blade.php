@@ -35,8 +35,7 @@
 
 
 <link rel='canonical' href="{{URL::asset('index/show')}}" />
-
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
+<link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/auto_combine_5ce4a_2dd9de8.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/auto_combine_82253_9dbf9d6.css')}}">
@@ -55,7 +54,7 @@
 
 
 <body>
-
+        
         <script data-fixed="true">var w=document.body.clientWidth;1480>w&&(document.body.className+=" w-1000");</script>
 
         <!-- S 通用头部 -->
@@ -109,6 +108,10 @@
             <div class="duya-header-gg clickstat" id="J_duyaHdGg" eid="click/push/navipic" eid_desc="点击/推荐/顶部导航图片"></div>
 
             <div class="duya-header-control clearfix">
+                <div class="hy-nav-right">
+                    <a class="hy-nav-title clickstat" href="<?=url('/login')?>" target="_blank"><span class="title">登录|注册</span></a>
+
+                </div>
 
                 <div class="hy-nav-right hy-nav-kaibo">
 
@@ -647,19 +650,8 @@ var UDB_SDK_SWTICH = true;
                 <div class="box-bd">
         @section('content')
         @show
-        <div class="list-page" id="js-list-page" data-pages="10"></div>
-            <div class="list-more ">
-   			 <div class="more-loading">
-        		<i class="icon-loading"></i>
-        			<em>加载中...</em>
-    		 </div>
-    		<div class="more-end">全部加载完成</div>
-    	<div class="more-empty">
-
-        <i class="icon-empty"></i>
-
-        <span>暂时没有相关直播间</span>
-
+        
+       
     </div>
 
 </div>
@@ -711,9 +703,9 @@ var UDB_SDK_SWTICH = true;
 
     </script>
 
-    <script type='text/javascript' src="{{URL::asset('js/push-min.js?t=20170818')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/push-min.js')}}"></script>
 
-    <script type='text/javascript' src="{{URL::asset('js/push.func-min.js?t=20161207')}}"></script><!-- E 后台推送消息 -->    <!-- E 页面公用功能 -->
+    <script type='text/javascript' src="{{URL::asset('js/push.func-min.js')}}"></script><!-- E 后台推送消息 -->    <!-- E 页面公用功能 -->
 
     <script type="text/javascript" src="{{URL::asset('js/ya-huya.min.js')}}" data-fixed="true" pro="huya_web" noreport="" id="yaScript"></script>
 

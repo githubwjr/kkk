@@ -1,6 +1,5 @@
 @extends('header')
 @section('content')
-    <div class="js-responded-list narrow">
 
         <div class="mod-list">
 
@@ -23,30 +22,25 @@
                 <div class="box-bd">
 
                                         <ul class="game-list clearfix" id="js-game-list">
-@foreach($cate as $va)
+@foreach($cate as $vas)
                                                                                 <li class="game-list-item" gid="1">
 
         <a target="_blank" href="http://www.huya.com/g/lol" class="pic new-clickstat" report='{"eid":"click/postion","position":"gameList/gameCard/1","game_id":"1"}'>
 
-        <img class="pic-img" src="{{$va['type_img']}}" onerror="this.onerror=null; this.src='images/240x360.jpg';" alt="{{$va['type_name']}}" title="{{$va['type_name']}}">
+        <img class="pic-img" src="{{$vas['type_img']}}" onerror="this.onerror=null; this.src='images/240x360.jpg';" alt="{{$vas['type_name']}}" title="{{$vas['type_name']}}">
 
-        <h3 class="title">{{$va['type_name']}}</h3>
+        <h3 class="title">{{$vas['type_name']}}</h3>
 
     </a>
 
 </li>
-@endforeach
-                                                                               
-
+@endforeach                                                                 
                                             </ul>
-
                                     </div>
 
             </div>
 
         </div>
-
-    </div>
 
 
 
