@@ -46,394 +46,31 @@
 												<thead>
 													<tr>
 														<th class="center">
-															<label>
+															<!--<label>
 																<input type="checkbox" class="ace">
 																<span class="lbl"></span>
-															</label>
+															</label>-->
+															ID
 														</th>
-														<th>用户名</th>
-														<th>手机号</th>
-														<th class="hidden-480">邮箱</th>
+														<th>礼物名称</th>
+														<th>礼物价值</th>
+														<th class="hidden-480">礼物说明</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
-															YY号
+															其他
 														</th>
-														<th class="hidden-480">Status</th>
 
-														<th></th>
+														<th>操作</th>
 													</tr>
 												</thead>
 
-												<tbody id="tbox">
-													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace">
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>
-															<a href="#">ace.com</a>
-														</td>
-														<td>$45</td>
-														<td class="hidden-480">3,330</td>
-														<td>Feb 12</td>
-
-														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
-														</td>
-
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success">
-																	<i class="icon-ok bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="icon-edit bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="icon-trash bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="icon-flag bigger-120"></i>
-																</button>
-															</div>
-
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle">
-																		<i class="icon-cog icon-only bigger-110"></i>
-																	</button>
-
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
+												<tbody id="tbox" v-for="value in lists">
+													<tr align="center">
+														<td colspan="7">{{value.gift_name}}</td>
 													</tr>
-
 													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace">
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>
-															<a href="#">base.com</a>
-														</td>
-														<td>$35</td>
-														<td class="hidden-480">2,595</td>
-														<td>Feb 18</td>
-
-														<td class="hidden-480">
-															<span class="label label-sm label-success">Registered</span>
-														</td>
-
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success">
-																	<i class="icon-ok bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="icon-edit bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="icon-trash bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="icon-flag bigger-120"></i>
-																</button>
-															</div>
-
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle">
-																		<i class="icon-cog icon-only bigger-110"></i>
-																	</button>
-
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace">
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>
-															<a href="#">max.com</a>
-														</td>
-														<td>$60</td>
-														<td class="hidden-480">4,400</td>
-														<td>Mar 11</td>
-
-														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
-														</td>
-
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success">
-																	<i class="icon-ok bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="icon-edit bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="icon-trash bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="icon-flag bigger-120"></i>
-																</button>
-															</div>
-
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle">
-																		<i class="icon-cog icon-only bigger-110"></i>
-																	</button>
-
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace">
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>
-															<a href="#">best.com</a>
-														</td>
-														<td>$75</td>
-														<td class="hidden-480">6,500</td>
-														<td>Apr 03</td>
-
-														<td class="hidden-480">
-															<span class="label label-sm label-inverse arrowed-in">Flagged</span>
-														</td>
-
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success">
-																	<i class="icon-ok bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="icon-edit bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="icon-trash bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="icon-flag bigger-120"></i>
-																</button>
-															</div>
-
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle">
-																		<i class="icon-cog icon-only bigger-110"></i>
-																	</button>
-
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace">
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>
-															<a href="#">pro.com</a>
-														</td>
-														<td>$55</td>
-														<td class="hidden-480">4,250</td>
-														<td>Jan 21</td>
-
-														<td class="hidden-480">
-															<span class="label label-sm label-success">Registered</span>
-														</td>
-
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success">
-																	<i class="icon-ok bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="icon-edit bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="icon-trash bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="icon-flag bigger-120"></i>
-																</button>
-															</div>
-
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle">
-																		<i class="icon-cog icon-only bigger-110"></i>
-																	</button>
-
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
+														<td>1</td>
 													</tr>
 												</tbody>
 											</table>
@@ -468,7 +105,7 @@
 														</tr>
 													</thead>
 
-													<tbody>
+													<tbody id='tbox'>
 														<tr>
 															<td>
 																<a href="#">ace.com</a>
@@ -563,21 +200,46 @@ export default {
   name: 'tables',
   data () {
     return {
-      message: ''
+//    message: '',
+      lists:[]
     }
   },
 	mounted: function() {
-		$.ajax({
-			url:'http://yii.929.vip/?r=index/show_userlist',
-			type:'get',
-			dataType:'jsonp',
-			jsonp:'call',
-			success:function(msg)
-			{
-//				$('#tbox').html(msg)
-				alert(2)
-			}
-		})
+		
+//			this.$http.jsonp('http://yii.929.vip/?r=index/gift', {}, 
+//			{
+//	        emulateJSON: true
+//	    }).then(function(response) {
+//	  
+//	        this.lists = response.body
+//	    }, function(response) {
+//	    	
+//	        console.log(response)
+//	    }); 
+		
+		
+		
+		
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/gift',
+//			type:'get',
+//			dataType:'jsonp',
+//			jsonp:'call',
+//			success:function(msg)
+//			{
+////				console.log(msg)
+//				var obj = '';
+//				$.each(msg,function(k,v){
+//					obj += '<tr><td class="center"><input type="hidden" value="'+v.gift_id+'" />'+v.gift_id+'</td><td>'+v.gift_name+'</td><td>'+v.gift_money+'</td><td>'+v.gift_desc+'</td><td>--</td><td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del"><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td></tr>'
+//				})
+//				$('#tbox').html(obj)
+//			}
+//		})
+		
+		
+		
+		
+		
 //		alert(3)
 //			this.$http.jsonp('http://yii.929.vip/?r=index/api', {}, {
 //	        emulateJSON: true

@@ -60,6 +60,13 @@
 										用户列表
 									</router-link>
 								</li>
+								
+								<li>
+									<router-link to="/user_add" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										用户添加
+									</router-link>
+								</li>
 
 								<!--<li>
 									<router-link to="/buttons" class="router-item">
@@ -150,12 +157,36 @@
 									</router-link>
 								</li>
 
-								<!--<li>
-									<router-link to="/jqgrid" class="router-item">
+								<li>
+									<router-link to="/t_add" class="router-item">
 										<i class="icon-double-angle-right"></i>
-										jqGrid plugin
+										添加礼物
 									</router-link>
-								</li>-->
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-toggle" href="#">
+								<i class="icon-list"></i>
+								<span class="menu-text"> 房间 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<router-link to="/rooms" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										房间列表
+									</router-link>
+								</li>
+
+								<li>
+									<router-link to="/room_add" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										添加房间
+									</router-link>
+								</li>
 							</ul>
 						</li>
 <!--

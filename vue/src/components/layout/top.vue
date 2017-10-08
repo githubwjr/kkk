@@ -226,7 +226,7 @@
 								<img alt="Jason's Photo" src="/static/assets/avatars/user.jpg" class="nav-user-photo">
 								<span class="user-info">
 									<small>欢迎光临,</small>
-									Jason
+									管理员
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -250,7 +250,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="javascript:" v-on:click="login_out">
+									<a href="/#/login" v-on:click="login_out">
 										<i class="icon-off"></i>
 										退出
 									</a>

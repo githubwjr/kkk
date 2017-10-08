@@ -40,6 +40,10 @@ import blank from '@/components/submenu/blank'
 
 //测试API
 import api_test from '@/components/api'
+import t_add from '@/components/tables/add'
+import user_add from '@/components/ui/user_add'
+import rooms from '@/components/room/rooms'
+import room_add from '@/components/room/room_add'
 
 //登录页面
 import login from '@/components/login'
@@ -54,7 +58,26 @@ export default new Router({
       name: 'Hello',
       component: api_test
     },
-    
+    {
+    	path:'/t_add',
+    	name:'t_add',
+    	component:t_add
+    },
+    {
+    	path:'/rooms',
+    	name:'rooms',
+    	component:rooms
+    },
+    {
+    	path:'/user_add',
+    	name:'user_add',
+    	component:user_add
+    },
+    {
+    	path:'/room_add',
+    	name:'room_add',
+    	component:room_add
+    },
     //接口调接
     {
   		path: '/echostr',
