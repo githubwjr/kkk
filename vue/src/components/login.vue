@@ -318,23 +318,26 @@ export default {
   	login:function(val)
   	{
   		$.ajax({
-  			url:host+'?r=login/login',
+  			url:'http://yii.929.vip/?r=index/login',
   			dataType:'jsonp',
   			data:{username:this.username,password:this.password},
   			success:function(e)
   			{
-  				switch (e.error)
-  				{
-  					case '200':
-  					alert(e.msg);
-  					$('#navbar').show();
-  					$('#sidebar').show();
-  					location.href='/#/';
-  					break;
-  					default:
-  					alert(e.msg);
-  					break;
-  				}
+  				console.log(e)
+  				alert(e)
+//				location.href="/"
+//				switch (e.error)
+//				{
+//					case '200':
+//					alert(e.msg);
+//					$('#navbar').show();
+//					$('#sidebar').show();
+//					location.href='/#/';
+//					break;
+//					default:
+//					alert(e.msg);
+//					break;
+//				}
   			}
   		})
   	}
