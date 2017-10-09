@@ -81,7 +81,7 @@
 
                 <div class="hy-nav-expand">
 
-                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('type/category')}}">分类</a><i class="icon-arrow"></i></div>
+                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('index/category')}}">分类</a><i class="icon-arrow"></i></div>
 
                     <div class="nav-expand-list nav-expand-game">
 
@@ -97,10 +97,12 @@
 
             <div class="duya-header-search clearfix" id="J_duyaHdSearch" >
 
-                 <form method="get" id="searchForm_id" action="<?=url('type/search')?>" target="_blank">
-                    <input type="text" name="user" value="主播、频道、游戏">                  
+                <form method="get" id="searchForm_id" name="navSearchForm" action="http://www.huya.com/search.php" target="_blank">
+
+                    <input type="text" name="hsk" value="主播、频道、游戏" autocomplete="off">
+
                     <button type="submit" class="btn-search clickstat" eid="click/search/searchbutton" eid_desc="点击/搜索/搜索按钮"></button>
-                    <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}">   -->
+
                 </form>
 
             </div>
@@ -223,7 +225,7 @@
                 @else
                 <div class="hy-nav-right nav-user success-login" style="display: block;">
 
-                    <a class="nav-user-title" href="http://i.huya.com/" target="_blank">
+                    <a class="nav-user-title" href="<?=url('info')?>" target="_blank">
 
                         <img id="login-userAvatar" src="{{URL::asset('images/10001.jpg')}}" alt="头像" />
 
@@ -239,11 +241,11 @@
 
                         <div class="tt-user-card">
 
-                            <a class="btn-exit" href="<?=url('index/logout')?>"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
+                            <a class="btn-exit" href="javascript:void()"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
 
                             <div class="u-info">
 
-                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="http://i.huya.com/" target="_blank">
+                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('info')?>" target="_blank">
 
                                     <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
 
@@ -616,9 +618,10 @@ var _hmt = _hmt || [];
 <script>
     $(function(){
         $("#logout").click(function(){
+           
             $.ajax({
                 type:'get',
-                url:'logout',
+                url:'index/logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");

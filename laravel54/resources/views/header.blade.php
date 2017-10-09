@@ -79,7 +79,7 @@
 
                 <div class="hy-nav-expand">
 
-                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('type/category')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">分类</a><i class="icon-arrow"></i></div>
+                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('index/category')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">分类</a><i class="icon-arrow"></i></div>
 
                     <div class="nav-expand-list nav-expand-game">
 
@@ -95,10 +95,12 @@
 
             <div class="duya-header-search clearfix" id="J_duyaHdSearch" >
 
-                <form method="get" id="searchForm_id" action="<?=url('type/search')?>" target="_blank">
-                    <input type="text" name="user" value="分类">                  
-                    <button type="submit" class="btn-search clickstat" eid="click/search/searchbutton"></button>
-                    <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+                <form method="get" id="searchForm_id" name="navSearchForm" action="http://www.huya.com/search.php" target="_blank">
+
+                    <input type="text" name="hsk" value="主播、频道、游戏" autocomplete="off">
+
+                    <button type="submit" class="btn-search clickstat" eid="click/search/searchbutton" eid_desc="点击/搜索/搜索按钮"></button>
+
                 </form>
 
             </div>
@@ -271,7 +273,7 @@
                 @else
                 <div class="hy-nav-right nav-user success-login" style="display: block;">
 
-                    <a class="nav-user-title" href="http://i.huya.com/" target="_blank">
+                    <a class="nav-user-title" href="<?=url('/info')?>" target="_blank">
 
                         <img id="login-userAvatar" src="{{URL::asset('images/10001.jpg')}}" alt="头像" />
 
@@ -292,7 +294,7 @@
 
                             <div class="u-info">
 
-                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="http://i.huya.com/" target="_blank">
+                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('/info')?>" target="_blank">
 
                                     <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
 
@@ -644,11 +646,8 @@ var UDB_SDK_SWTICH = true;
 
 </div>
 
-                <!-- 标签快速选择 -->
-
+              
                
-
-                <div class="box-bd">
         @section('content')
         @show
         
@@ -788,7 +787,7 @@ var _hmt = _hmt || [];
         $("#logout").click(function(){
             $.ajax({
                 type:'get',
-                url:'logout',
+                url:'index/logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
@@ -798,19 +797,6 @@ var _hmt = _hmt || [];
             })
         })
     })
-
-
-    // $("#btn").click(function(){
-    //     var type_name = $("#user").val();
-    //     $.ajax({
-    //         type:'get',
-    //         url:"search",
-    //         data:{type_name:type_name},
-    //         success:function(msg){
-
-    //         }
-    //     })
-    // })
 
 </script>
 

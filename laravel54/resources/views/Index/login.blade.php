@@ -100,7 +100,7 @@ var youdao_conv_id = 271546;
 			     if(msg == 1)
 			     {
 			     	alert('快去看直播吧');
-			     	location.href = "/index";//location.href实现客户端页面的跳转 
+			     	location.href = "index";//location.href实现客户端页面的跳转 
 			     }else{
 			     	$('#ar').html('登录失败了亲');
 					$('#ar').attr('style','display:true;')

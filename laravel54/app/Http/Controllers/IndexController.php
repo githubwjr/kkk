@@ -44,23 +44,6 @@ class IndexController extends Controller
 		$type_id = implode(",",$data);
 		return $type_id;
 	}
-	//多级分类
-	public function cate($list,$pk='type_id',$pid='parent_id',$child='_child',$root=0){
-		$tree=array();
-	    $packData=array();
-	    foreach ($list as  $data) {
-	        $packData[$data[$pk]] = $data;
-	    }
-	    foreach ($packData as $key =>$val){     
-	        if($val[$pid]==$root){//代表跟节点       
-	            $tree[]=& $packData[$key];
-	        }else{
-	            //找到其父类
-	            $packData[$val[$pid]][$child][]=& $packData[$key];
-	        }
-	    }
-	    return $tree;
-	}
 	//直播
 	public function show(){
 
@@ -89,17 +72,47 @@ class IndexController extends Controller
 		}
 		
 		foreach ($data as $key => $value) {
-			$rs=DB::select("SELECT * FROM huya_type where type_id=".$value['type_id']);
+			$rs=DB::select("SELECT type_name FROM huya_type where type_id=".$value['type_id']);
+
 			$data[$key]['type_name']=$rs[0]['type_name'];
+			
+			$anchor=DB::select("SELECT user_id FROM huya_anchor where anchor_id=".$value['anchor_id']);
 
-			$anchor=DB::select("SELECT * FROM huya_anchor where anchor_id=".$value['anchor_id']);
-
-			$info=DB::select("SELECT * FROM huya_userinfo where info_user_id=".$anchor[0]['user_id']);
-
+			$info=DB::select("SELECT * FROM huya_userinfo where user_id=".$anchor[0]['user_id']);
 			$data[$key]['nickname']=$info[0]['info_nickname'];
 			$data[$key]['head']=$info[0]['info_head'];
 		}
 		return $data;
+	}
+	//多级分类
+	public function cate($list,$pk='type_id',$pid='parent_id',$child='_child',$root=0){
+		$tree=array();
+	    $packData=array();
+	    foreach ($list as  $data) {
+	        $packData[$data[$pk]] = $data;
+	    }
+	    foreach ($packData as $key =>$val){     
+	        if($val[$pid]==$root){//代表跟节点       
+	            $tree[]=& $packData[$key];
+	        }else{
+	            //找到其父类
+	            $packData[$val[$pid]][$child][]=& $packData[$key];
+	        }
+	    }
+	    return $tree;
+	}
+	//分类
+	public function category(){
+		$rs=DB::select("select * from huya_type where type_status=:status",['status'=>1]);
+		$data=$this->cate($rs);
+		$res=DB::select("select * from huya_type where parent_id>:pid",['pid'=>0]);
+		$username=Session::get('user');
+		if (!empty($username)) {
+			$er=array('error'=>1);
+		}else{
+			$er=array('error'=>0);
+		}
+		return view('index.category',['data'=>$data,'cate'=>$res,'er'=>$er]);
 	}
 	//登录
 	public function login(){
@@ -118,7 +131,7 @@ class IndexController extends Controller
 		//七天免等
 		$rem=$_GET['remember'];
 		//验证手机号
-		$phone=DB::table('user')->where([['user_phone',$user],['user_pwd',$user_pwd]])->first();
+		$phone=DB::table('user')->where([['user_phone',$user],['user_pwd',MD5($user_pwd)]])->first();
 		$flag=1;
 		$user_name=null;
 		if (empty($phone)) {
@@ -177,7 +190,7 @@ class IndexController extends Controller
         Session::flush();
         $rs=Session::get('user');
         if (empty($rs)) {
-        	return 1;
+        	echo 1;
         }
 	}
 }
