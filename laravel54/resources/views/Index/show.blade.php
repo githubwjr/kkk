@@ -1,9 +1,7 @@
-
-  @extends('header');
+@extends('header');
 @section('content')
                <!-- 标签快速选择 -->
 
-                <div class="box-hd clearfix">
 
                     <h2 class="title"><a href="http://www.huya.com/l">全部直播</a></h2>
 
@@ -52,9 +50,4 @@
 
 </ul>
 @endsection
-<style>
-    .duya-header{
-        margin-top: -18px;
-    }
-</style>
        
