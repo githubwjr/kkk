@@ -110,6 +110,8 @@
             <div class="duya-header-gg clickstat" id="J_duyaHdGg" eid="click/push/navipic" eid_desc="点击/推荐/顶部导航图片"></div>
 
             <div class="duya-header-control clearfix">
+                   
+                
 
                 <div class="hy-nav-right hy-nav-kaibo">
 
@@ -200,7 +202,8 @@
 
                 </div>
 
-                <div class="hy-nav-right un-login">
+                   @if($er['error']==0)
+                <div class="hy-nav-right un-login" style="display: block;">
 
                     <div class="hy-nav-title">
 
@@ -208,19 +211,19 @@
 
                         <div class="un-login-btn">
 
-                            <a class="clickstat" id="nav-login" href="#" eid="click/navi/sign" eid_desc="点击/导航/登录">登录</a>
+                            <a  href="<?=url('/login')?>" eid="click/navi/sign" eid_desc="点击/导航/登录">登录</a>
 
                             <i>|</i>
 
-                            <a class="clickstat" id="nav-regiest" href="#" eid="click/navi/login" eid_desc="点击/导航/注册">注册</a>
+                            <a href="<?=url('/register')?>" eid="click/navi/login" eid_desc="点击/导航/注册">注册</a>
 
                         </div>
 
                     </div>
 
                 </div>
-
-                <div class="hy-nav-right nav-user success-login">
+                @else
+                <div class="hy-nav-right nav-user success-login" style="display: block;">
 
                     <a class="nav-user-title" href="http://i.huya.com/" target="_blank">
 
@@ -238,7 +241,7 @@
 
                         <div class="tt-user-card">
 
-                            <a class="btn-exit" id="nav-loggout" href="#"><i class="hy-nav-exit-icon"></i><span>退出</span></a>
+                            <a class="btn-exit" href="<?=url('index/logout')?>"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
 
                             <div class="u-info">
 
@@ -247,8 +250,8 @@
                                     <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
 
                                 </a>
-
-                                <p class="nick" id="J_huyaNavUserCardNick">...</p>
+                        <span style="display:none"><?php $user=Session::get('user');?></span>
+                                <p class="nick" id="J_huyaNavUserCardNick">{{$user['user_name']}}</p>
 
                                 <p class="user-sign" id="J_huyaNavUserCardSign">...</p>
 
@@ -371,6 +374,7 @@
                 </div>
 
             </div>
+            @endif
 
             <div class="duya-header-tips">
 
@@ -611,7 +615,23 @@ var _hmt = _hmt || [];
 
 </script>
 
+<script>
+    $(function(){
+        $("#logout").click(function(){
+            $.ajax({
+                type:'get',
+                url:'logout',
+                success:function(o){
+                    if (o==1) {
+                        alert("退出成功");
+                        location.href='index';
+                    }
+                }
+            })
+        })
+    })
 
+</script>
 
 
 

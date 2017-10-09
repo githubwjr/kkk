@@ -35,8 +35,7 @@
 
 
 <link rel='canonical' href="{{URL::asset('index/show')}}" />
-
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
+<link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/auto_combine_5ce4a_2dd9de8.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/pages_modules_796de8d.css')}}">
 <link type="text/css" rel="stylesheet" href="{{URL::asset('css/auto_combine_82253_9dbf9d6.css')}}">
@@ -55,7 +54,7 @@
 
 
 <body>
-
+        
         <script data-fixed="true">var w=document.body.clientWidth;1480>w&&(document.body.className+=" w-1000");</script>
 
         <!-- S 通用头部 -->
@@ -74,7 +73,7 @@
 
             <div class="duya-header-nav">
 
-                <span class="hy-nav-link"><a href="{{URL::asset('index/index')}}" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
+                <span class="hy-nav-link"><a href="<?=url('/index')?>" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
 
                 <span class="hy-nav-link duya-header-on"><a href="{{URL::asset('index/show')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
 
@@ -109,7 +108,7 @@
             <div class="duya-header-gg clickstat" id="J_duyaHdGg" eid="click/push/navipic" eid_desc="点击/推荐/顶部导航图片"></div>
 
             <div class="duya-header-control clearfix">
-
+                
                 <div class="hy-nav-right hy-nav-kaibo">
 
                     <a class="hy-nav-title clickstat" href="http://www.huya.com/e/zhubo" eid="click/navi/kaibo" eid_desc="点击/导航/开播" target="_blank">
@@ -251,8 +250,8 @@
                     </div>
 
                 </div>
-
-                <div class="hy-nav-right un-login">
+                @if($er['error']==0)
+                <div class="hy-nav-right un-login" style="display: block;">
 
                     <div class="hy-nav-title">
 
@@ -260,19 +259,19 @@
 
                         <div class="un-login-btn">
 
-                            <a class="clickstat" id="nav-login" href="#" eid="click/navi/sign" eid_desc="点击/导航/登录">登录</a>
+                            <a  href="<?=url('/login')?>" eid="click/navi/sign" eid_desc="点击/导航/登录">登录</a>
 
                             <i>|</i>
 
-                            <a class="clickstat" id="nav-regiest" href="#" eid="click/navi/login" eid_desc="点击/导航/注册">注册</a>
+                            <a  href="<?=url('/register')?>" eid="click/navi/login" eid_desc="点击/导航/注册">注册</a>
 
                         </div>
 
                     </div>
 
                 </div>
-
-                <div class="hy-nav-right nav-user success-login">
+                @else
+                <div class="hy-nav-right nav-user success-login" style="display: block;">
 
                     <a class="nav-user-title" href="http://i.huya.com/" target="_blank">
 
@@ -289,8 +288,9 @@
                         <i class="arrow"></i>
 
                         <div class="tt-user-card">
+                        <span style="display:none"><?php $user=Session::get('user')?></span>
 
-                            <a class="btn-exit" id="nav-loggout" href="#"><i class="hy-nav-exit-icon"></i><span>退出</span></a>
+                            <a class="btn-exit" href="#"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
 
                             <div class="u-info">
 
@@ -300,7 +300,7 @@
 
                                 </a>
 
-                                <p class="nick" id="J_huyaNavUserCardNick">...</p>
+                                <p class="nick" id="J_huyaNavUserCardNick">{{$user['user_name']}}</p>
 
                                 <p class="user-sign" id="J_huyaNavUserCardSign">...</p>
 
@@ -423,6 +423,7 @@
                 </div>
 
             </div>
+            @endif
 
             <div class="duya-header-tips">
 
@@ -568,11 +569,16 @@ var UDB_SDK_SWTICH = true;
 
             <div class="sidebar-show-nav">
 
-                <a href="http://i.huya.com/index.php?m=Subscribe" class="clickstat sidebar-show-line js-sub" target="_blank" eid="click/navi/zuoce/sub" eid_desc="点击/导航/左侧导航/我的订阅"><i class="sidebar-icon-sub"></i>我的订阅<span class="subscribe-text"> (请登录)</span></a>
+                <a href="http://i.huya.com/index.php?m=Subscribe" target="_blank" eid="click/navi/zuoce/sub" eid_desc="点击/导航/左侧导航/我的订阅"><i class="sidebar-icon-sub"></i>我的订阅
+                @if($er['error']==0)
+                <span class="subscribe-text"> (请登录)</span>
+                @else
+                @endif
+                </a>
 
-                <a href="http://www.huya.com/l" class="clickstat sidebar-show-line" eid="click/navi/zuoce/live" eid_desc="点击/导航/左侧导航/全部直播"><i class="sidebar-icon-live"></i> 全部直播</a>
+                <a href="" eid="click/navi/zuoce/live" eid_desc="点击/导航/左侧导航/全部直播"><i class="sidebar-icon-live"></i> 全部直播</a>
 
-                <a href="http://www.huya.com/g" class="clickstat sidebar-show-line" eid="click/navi/zuoce/gametype" eid_desc="点击/导航/左侧导航/全部游戏"><i class="sidebar-icon-type"></i>全部分类</a>
+                <a href="category" eid="click/navi/zuoce/gametype" eid_desc="点击/导航/左侧导航/全部游戏"><i class="sidebar-icon-type"></i>全部分类</a>
 
             </div>
 
@@ -582,7 +588,7 @@ var UDB_SDK_SWTICH = true;
 					@foreach($data as $v)
                 <div class="m sidebar-show-line ">
 
-                    <a class="m-title clickstat" href="http://www.huya.com/g/100023" eid="click/navi/zuoce/remen1" eid_desc="点击/导航/左侧导航/热门1">
+                    <a class="m-title clickstat" href="show?id={{$v['type_id']}}" eid="click/navi/zuoce/remen1" eid_desc="点击/导航/左侧导航/热门1">
 
                         <i class="m-title-type" style="background-image: url('{{URL::asset('//huyaimg.msstatic.com/cdnimage/sidebarNavGroup/phpz3aAZJ1488336152.png')}}';"></i>
 
@@ -594,7 +600,7 @@ var UDB_SDK_SWTICH = true;
 						
                         <div class="recomend-list clearfix">
                         @foreach($v['_child'] as $val)
-                            <a class="recomend-item clickstat" eid="click/navi/zuoce/remen1" eid_desc="点击/导航/左侧导航/热门1" href="http://www.huya.com/g/lol" title="{{$val['type_name']}}">{{$val['type_name']}}</a>
+                            <a class="recomend-item clickstat" eid="click/navi/zuoce/remen1" eid_desc="点击/导航/左侧导航/热门1" href="show?id={{$val['type_id']}}" title="{{$val['type_name']}}">{{$val['type_name']}}</a>
 						@endforeach
                             </div>
                     </div>
@@ -647,19 +653,8 @@ var UDB_SDK_SWTICH = true;
                 <div class="box-bd">
         @section('content')
         @show
-        <div class="list-page" id="js-list-page" data-pages="10"></div>
-            <div class="list-more ">
-   			 <div class="more-loading">
-        		<i class="icon-loading"></i>
-        			<em>加载中...</em>
-    		 </div>
-    		<div class="more-end">全部加载完成</div>
-    	<div class="more-empty">
-
-        <i class="icon-empty"></i>
-
-        <span>暂时没有相关直播间</span>
-
+        
+       
     </div>
 
 </div>
@@ -711,9 +706,9 @@ var UDB_SDK_SWTICH = true;
 
     </script>
 
-    <script type='text/javascript' src="{{URL::asset('js/push-min.js?t=20170818')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/push-min.js')}}"></script>
 
-    <script type='text/javascript' src="{{URL::asset('js/push.func-min.js?t=20161207')}}"></script><!-- E 后台推送消息 -->    <!-- E 页面公用功能 -->
+    <script type='text/javascript' src="{{URL::asset('js/push.func-min.js')}}"></script><!-- E 后台推送消息 -->    <!-- E 页面公用功能 -->
 
     <script type="text/javascript" src="{{URL::asset('js/ya-huya.min.js')}}" data-fixed="true" pro="huya_web" noreport="" id="yaScript"></script>
 
@@ -788,6 +783,23 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 
 })();
+
+</script>
+<script>
+    $(function(){
+        $("#logout").click(function(){
+            $.ajax({
+                type:'get',
+                url:'logout',
+                success:function(o){
+                    if (o==1) {
+                        alert("退出成功");
+                        location.href='index';
+                    }
+                }
+            })
+        })
+    })
 
 </script>
 
