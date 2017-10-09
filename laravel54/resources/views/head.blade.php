@@ -225,7 +225,7 @@
                 @else
                 <div class="hy-nav-right nav-user success-login" style="display: block;">
 
-                    <a class="nav-user-title" href="http://i.huya.com/" target="_blank">
+                    <a class="nav-user-title" href="<?=url('info')?>" target="_blank">
 
                         <img id="login-userAvatar" src="{{URL::asset('images/10001.jpg')}}" alt="头像" />
 
@@ -245,7 +245,7 @@
 
                             <div class="u-info">
 
-                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="http://i.huya.com/" target="_blank">
+                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('info')?>" target="_blank">
 
                                     <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
 
