@@ -12,10 +12,13 @@ class InfoController extends Controller{
 		if (!empty($username)) {
 			$user_id=$username['user_id'];
 			$er=DB::table('userinfo')->first();
+			Session::put('info',$er);
 			$year=$er['info_birthday']-date('Y-M-D');
 			$location=DB::select("SELECT region_name from huya_region where region_id = ".$er['info_location']);
 
 			$num=DB::table('money')->first();
+			Session::put('money',$num);
+			// print_r($num);die;
 			$er['error']=1;
 			$er['location']=$location[0]['region_name'];
 			$er['age']=$year;

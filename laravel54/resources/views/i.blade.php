@@ -35,7 +35,7 @@
 <!-- 上传头像 e -->
 
 
-<link href="//a.msstatic.com/huya/icenter/main/css/new_home_index__9176602.css" rel="stylesheet"/>
+<link href="http://a.msstatic.com/huya/icenter/main/css/new_home_index__9176602.css" rel="stylesheet"/>
 <!-- 图片裁剪样式 -->
 <link rel="stylesheet" type="text/css" href="http://a.msstatic.com/huya/icenter/2.4/css/imgareaselect-default.css" />
     <style>
@@ -191,7 +191,7 @@
 
                                 </a>
                         <span style="display:none"><?php $user=Session::get('user');?></span>
-                                <p class="nick" id="J_huyaNavUserCardNick">{{$user['user_name']}}</p>
+                                <p class="nick" id="J_huyaNavUserCardNick">欢迎 {{$user['user_name']}} 登录</p>
 
                                 <p class="user-sign" id="J_huyaNavUserCardSign">...</p>
 
@@ -199,23 +199,23 @@
 
                                     <div class="between">
 
-                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV-</span>
+                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV1</span>
 
                                         <div class="bar-cnt">
 
-                                            <p id="J_huyaNavUserCardBarInfo"></p>
+                                            <p id="J_huyaNavUserCardBarInfo"><?php $info = Session::get('info');?></p>
 
                                             <p class="bar">
 
-                                                <i id="J_huyaNavUserCardExpBar"><b class="J_huyaNavUserCardExpText"></b></i>
+                                                <i id="J_huyaNavUserCardExpBar" style="width:{{$info['u_exp']/2}}%"><b class="J_huyaNavUserCardExpText"></b></i>
 
-                                                <span class="J_huyaNavUserCardExpText"></span>
+                                                <span class="J_huyaNavUserCardExpText">{{$info['u_exp']}}/200</span>
 
                                             </p>
 
                                         </div>
 
-                                        <span class="to" id="J_huyaNavUserCardExpTo">LV-</span>
+                                        <span class="to" id="J_huyaNavUserCardExpTo">LV2</span>
 
                                     </div>
 
@@ -227,15 +227,15 @@
 
                                 <div class="bd">
 
-                                    <span class="type-name">资产</span>
+                                    <span class="type-name">资产<?php $num = Session::get('money');?></span>
 
                                     <ul class="type">
 
-                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">...</em></li>
+                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">{{$num['glod_num']}}</em></li>
 
-                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">...</em></li>
+                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">{{$num['glods']}}</em></li>
 
-                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">...</em></li>
+                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">{{$num['silver_num']}}</em></li>
 
                                     </ul>
 

@@ -308,7 +308,7 @@
 
                                     <div class="between">
 
-                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV-</span>
+                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV1</span>
 
                                         <div class="bar-cnt">
 
@@ -324,7 +324,7 @@
 
                                         </div>
 
-                                        <span class="to" id="J_huyaNavUserCardExpTo">LV-</span>
+                                        <span class="to" id="J_huyaNavUserCardExpTo">LV2</span>
 
                                     </div>
 

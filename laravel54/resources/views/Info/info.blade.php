@@ -18,7 +18,8 @@
                     </form>
                     <div class="user_info">
                         <h2 style="font-size: 25px;" class="uesr_n">{{$er['info_nickname']}}      </h2>
-                                                    <span class="user_sex user_sex-female"></span>
+                                                    <!-- woman<span class="user_sex user_sex-female"></span> -->
+                                                    <span class="user_sex user_sex-male"></span>
                                                 
                         <!-- <p class="yy_num"><span>YY:</span><span id="YY">2094643002</span></p> -->
                                                 <!-- 第三方登陆，昵称同步 -->
@@ -40,8 +41,8 @@
                         <div class="detail table-badge" id="grow_level">
                             <span>LV1</span>
                             <span class="contact">
-                                <span class="number">0/200</span>
-                                <span class="part" style="width:0%;"></span>
+                                <span class="number">{{$er['u_exp']}}/200</span>
+                                <span class="part" style="width:{{$er['u_exp']/2}}%;"></span>
                                 <span class="grow_msg" style="top: -32px; left: 0px; display: none;">
                                                                         <span class="grow_msg_span">今日获得<span class="num">0</span>点经验值，升级还需<span class="num">200</span>点</span>
                                                                         <i class="up_arrows"></i>
