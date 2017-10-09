@@ -226,7 +226,7 @@
 								<img alt="Jason's Photo" src="/static/assets/avatars/user.jpg" class="nav-user-photo">
 								<span class="user-info">
 									<small>欢迎光临,</small>
-									Jason
+									{{user}}
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -250,7 +250,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="javascript:" v-on:click="login_out">
+									<a href="/#/login" v-on:click="login_out">
 										<i class="icon-off"></i>
 										退出
 									</a>
@@ -270,8 +270,12 @@ export default {
   name: 'itop',
   data () {
     return {
-      message: ''
+      message: '',
+      user:''
     }
+  },
+  created(){
+  	checks(this)
   },
   methods:
   {
@@ -299,6 +303,29 @@ export default {
   	}
   }
 }
+function checks(obj)
+{
+	$.ajax({
+			url:'http://yii.929.vip/?r=logins/checks',
+			dataType:'jsonp',
+			success:function(msg)
+			{
+//				console.log(msg)
+				if(msg.code == 200)
+				{
+//					alert('欢迎登录')
+					obj.user = msg.user
+				}
+				else
+				{
+					alert('请先登录')
+					location.href="/#/login";
+				}
+			}
+		})
+//alert(7)
+}
+
 </script>
 
 <style>
