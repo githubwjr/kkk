@@ -284,28 +284,28 @@ export default {
   {
   	del:function(id)
   	{
-//		alert('测试删除')
+		alert('测试删除')
 //		alert(id)
-		$.ajax({
-			url:'http://yii.929.vip/?r=index/g_del',
-			type:'get',
-			dataType:'jsonp',
-			data:'gift_id='+id,
-//			jsonp:'call',
-			success:function(msg)
-			{
-				if(msg.code == 200)
-				{
-					alert('删除成功')
-//					location.href="/"
-					location.href="/#/t_add"
-				}
-				else
-				{
-					alert('操作失败')
-				}
-			}
-		})
+//		$.ajax({
+//			url:'http://yii.929.vip/?r=index/g_del',
+//			type:'get',
+//			dataType:'jsonp',
+//			data:'gift_id='+id,
+////			jsonp:'call',
+//			success:function(msg)
+//			{
+//				if(msg.code == 200)
+//				{
+//					alert('删除成功')
+////					location.href="/"
+//					location.href="/#/t_add"
+//				}
+//				else
+//				{
+//					alert('操作失败')
+//				}
+//			}
+//		})
   	},
 	first_page:function()
 	{
