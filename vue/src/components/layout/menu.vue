@@ -215,6 +215,33 @@
 								
 							</ul>
 						</li>
+						
+						<li>
+							<a class="dropdown-toggle" href="#">
+								<i class="icon-list"></i>
+								<span class="menu-text"> 主播 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								
+								<li>
+									<router-link to="/lives" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										主播列表
+									</router-link>
+								</li>
+								
+								<li>
+									<router-link to="/room_add" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										添加主播
+									</router-link>
+								</li>
+								
+							</ul>
+						</li>
 <!--
 						<li>
 							<a href="#" class="dropdown-toggle">

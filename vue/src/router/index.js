@@ -45,6 +45,7 @@ import user_add from '@/components/ui/user_add'
 import rooms from '@/components/room/rooms'
 import room_add from '@/components/room/room_add'
 import moneys from '@/components/money/moneys'
+import lives from '@/components/liver/list'
 
 //登录页面
 import login from '@/components/login'
@@ -89,6 +90,11 @@ export default new Router({
     	path:'/moneys',
     	name:'moneys',
     	component:moneys
+    },
+    {
+    	path:'/lives',
+    	name:'lives',
+    	component:lives
     },
 
 
