@@ -1,4 +1,4 @@
-@extends('header')
+@extends('header2')
 @section('content')
 
         <div class="mod-list">

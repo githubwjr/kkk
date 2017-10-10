@@ -64,4 +64,5 @@ route::get("/title",'InfoController@title');
 route::get("/estate",'InfoController@estate');
 route::get("/cdkey",'InfoController@cdkey');
 route::get("/auth",'InfoController@auth');
-route::get('/edit',"InfoController@edit");
+route::get('/edit',"EditController@edit");
+route::any('/edit_do',"EditController@edit_do");

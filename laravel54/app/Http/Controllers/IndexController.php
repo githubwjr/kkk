@@ -51,10 +51,11 @@ class IndexController extends Controller
 		isset($_GET['id'])?$type_id=$_GET['id'] : $type_id='';
 	
 		$rs=DB::select("select * from huya_type where type_status=:status",['status'=>1]);
-
+		// print_r($rs);die;
 		$data=$this->cate($rs);
 
 		$live=$this->live($type_id);
+		// print_r($live);die;
 		$username=Session::get('user');
 		if (!empty($username)) {
 			$er=array('error'=>1);
@@ -136,10 +137,10 @@ class IndexController extends Controller
 		$user_name=null;
 		if (empty($phone)) {
 			//验证邮箱
-			$email=DB::table('user')->where([['user_email',$user],['user_pwd',$user_pwd]])->first();
+			$email=DB::table('user')->where([['user_email',$user],['user_pwd',md5($user_pwd)]])->first();
 			if (empty($email)) {
 				//验证yy
-				$yy=DB::table('user')->where([['user_yy',$user],['user_pwd',$user_pwd]])->first();
+				$yy=DB::table('user')->where([['user_yy',$user],['user_pwd',md5($user_pwd)]])->first();
 				if (!$yy['user_name']) {
 						$flag=0;
 				}else{
@@ -175,7 +176,7 @@ class IndexController extends Controller
 			$rs=DB::table('user')->insert([
 					'user_email'=>$email,
 					'user_phone'=>$phone,
-					'user_pwd'=>$user_pwd
+					'user_pwd'=>md5($user_pwd)
 				]);
 			if ($rs) {
 				$error=200;

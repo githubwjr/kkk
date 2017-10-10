@@ -50,13 +50,13 @@
     <div class="duya-header-wrap clearfix">
         <div class="duya-header-bd clearfix">
             <h1 id="duya-header-logo" title="虎牙直播-虎牙TV-中国领先的互动直播平台">
-                <a href="http://www.huya.com/" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="//a.msstatic.com/huya/main/img/logo.png" alt="虎牙直播" width="120" height="36"></a>
+                <a href="<?=url('/index')?>" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="//a.msstatic.com/huya/main/img/logo.png" alt="虎牙直播" width="120" height="36"></a>
             </h1>
             <div class="duya-header-nav">
-                <span class="hy-nav-link"><a href="http://www.huya.com/" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
-                <span class="hy-nav-link"><a href="http://www.huya.com/l" class="hy-nav-title hiido_stat clickstat" hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
+                <span class="hy-nav-link"><a href="<?=url('/index')?>" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
+                <span class="hy-nav-link"><a href="{{URL::asset('index/show')}}" class="hy-nav-title hiido_stat clickstat" hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
                 <div class="hy-nav-expand">
-                    <div class="hy-nav-title nav-main" id="nav-main"><a href="http://www.huya.com/g">分类</a><i class="icon-arrow"></i></div>   
+                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('index/category')}}">分类</a><i class="icon-arrow"></i></div>   
                     <div class="nav-expand-list nav-expand-game">
                         <i class="arrow"></i>
                     <dl class="clearfix"><dt>热门分类</dt><dd><a class="clickstat" eid="click/navi/game/game1" eid_desc="点击/导航/游戏/游戏1" title="英雄联盟" href="http://www.huya.com/g/lol" target="_blank">英雄联盟</a></dd><dd><a class="clickstat" eid="click/navi/game/game2" eid_desc="点击/导航/游戏/游戏2" title="王者荣耀" href="http://www.huya.com/g/wzry" target="_blank">王者荣耀</a></dd><dd><a class="clickstat" eid="click/navi/game/game3" eid_desc="点击/导航/游戏/游戏3" title="星秀" href="http://www.huya.com/g/xingxiu" target="_blank">星秀</a></dd><dd><a class="clickstat" eid="click/navi/game/game4" eid_desc="点击/导航/游戏/游戏4" title="主机游戏" href="http://www.huya.com/g/100032" target="_blank">主机游戏</a></dd><dd><a class="clickstat" eid="click/navi/game/game5" eid_desc="点击/导航/游戏/游戏5" title="户外" href="http://www.huya.com/g/2836" target="_blank">户外</a></dd><dd><a class="clickstat" eid="click/navi/game/game6" eid_desc="点击/导航/游戏/游戏6" title="穿越火线" href="http://www.huya.com/g/cf" target="_blank">穿越火线</a></dd><dd><a class="clickstat" eid="click/navi/game/game7" eid_desc="点击/导航/游戏/游戏7" title="绝地求生" href="http://www.huya.com/g/2793" target="_blank">绝地求生</a></dd><dd><a class="clickstat" eid="click/navi/game/game8" eid_desc="点击/导航/游戏/游戏8" title="我的世界" href="http://www.huya.com/g/MC" target="_blank">我的世界</a></dd><dd><a class="clickstat" eid="click/navi/game/game9" eid_desc="点击/导航/游戏/游戏9" title="地下城与勇士" href="http://www.huya.com/g/dnf" target="_blank">地下城与勇士</a></dd></dl><dl class="clearfix"><dt>玩家推荐</dt><dd><a class="clickstat" eid="click/navi/game/game10" eid_desc="点击/导航/游戏/游戏10" title="迷你世界" href="http://www.huya.com/g/2683" target="_blank">迷你世界</a></dd><dd><a class="clickstat" eid="click/navi/game/game11" eid_desc="点击/导航/游戏/游戏11" title="守望先锋" href="http://www.huya.com/g/overwatch" target="_blank">守望先锋</a></dd><dd><a class="clickstat" eid="click/navi/game/game12" eid_desc="点击/导航/游戏/游戏12" title="球球大作战" href="http://www.huya.com/g/qiuqiu" target="_blank">球球大作战</a></dd><dd><a class="clickstat" eid="click/navi/game/game13" eid_desc="点击/导航/游戏/游戏13" title="昆特牌" href="http://www.huya.com/g/2839" target="_blank">昆特牌</a></dd><dd><a class="clickstat" eid="click/navi/game/game14" eid_desc="点击/导航/游戏/游戏14" title="天天酷跑" href="http://www.huya.com/g/ttkp" target="_blank">天天酷跑</a></dd><dd><a class="clickstat" eid="click/navi/game/game15" eid_desc="点击/导航/游戏/游戏15" title="冒险岛2" href="http://www.huya.com/g/2350" target="_blank">冒险岛2</a></dd><dd><a class="clickstat" eid="click/navi/game/game16" eid_desc="点击/导航/游戏/游戏16" title="颜值" href="http://www.huya.com/g/2168" target="_blank">颜值</a></dd><dd><a class="clickstat" eid="click/navi/game/game17" eid_desc="点击/导航/游戏/游戏17" title="美食" href="http://www.huya.com/g/2752" target="_blank">美食</a></dd><dd><a class="clickstat" eid="click/navi/game/game18" eid_desc="点击/导航/游戏/游戏18" title="二次元" href="http://www.huya.com/g/2633" target="_blank">二次元</a></dd></dl><a href="http://www.huya.com/g" class="nav-expand-game-more" target="_blank">更多 <span>&gt;</span></a><a href="http://www.huya.com/s7" id="J_adCategory" class="clickstat third-clickstat" data-thirdstat="" data-thirdview="" eid="click/push/navigame" eid_desc="点击/推荐/导航游戏下拉图" target="_blank"><img src="//livewebbs2.msstatic.com/huya_1506408249_content.jpg" width="250" height="60" alt="S7全球总决赛"></a></div>
@@ -255,7 +255,7 @@
 
                                     <li class="links-i">
 
-                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>                                        
+                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>
 
                                             <i></i>
 
@@ -330,7 +330,7 @@
 
 
     <script src="//a.msstatic.com/huya/common/header.js"></script>
-    <div style="height:50px;"></div>
+
     <div class="admin-wrap">
 <style type="text/css">
 .nav-scroll-wrap .nav-section .icon-recommendtag{
@@ -386,7 +386,7 @@
 <script type="text/javascript" src="//a.msstatic.com/huya/icenter/1.0/js/cookies.js"></script>
 
     <script src="//a.msstatic.com/huya/common/header.js"></script>
-    <div style="height:50px;"></div>
+
     <div class="admin-wrap">
 <style type="text/css">
 .nav-scroll-wrap .nav-section .icon-recommendtag{
@@ -448,7 +448,7 @@
                     <h3 class="header">&nbsp;个人中心</h3>
                     <ul class="icon-filter">
                         <li>
-                            <a menu="home" href="info">
+                            <a menu="home" href="info" class="selected">
                                 <span class="icon icon-home"></span>
                                 <span class="title">
                                     我的信息

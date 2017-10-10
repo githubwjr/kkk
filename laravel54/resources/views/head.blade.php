@@ -69,13 +69,13 @@
 
             <h1 id="duya-header-logo" title="虎牙直播-虎牙TV-中国领先的互动直播平台">
 
-                <a href="http://www.huya.com/" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="{{URL::asset('images/logo.png')}}" alt="虎牙直播" width="120" height="36"></a>
+                <a href="{{URL::asset('/index')}}" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="{{URL::asset('images/logo.png')}}" alt="虎牙直播" width="120" height="36"></a>
 
             </h1>
 
             <div class="duya-header-nav">
 
-                <span class="hy-nav-link duya-header-on"><a href="{{URL::asset('index/index')}}" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
+                <span class="hy-nav-link duya-header-on"><a href="{{URL::asset('/index')}}" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
 
                 <span class="hy-nav-link"><a href="{{URL::asset('index/show')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
 
@@ -235,13 +235,13 @@
 
                     </a>
 
-                    <div class="nav-expand-list">
+                                        <div class="nav-expand-list">
 
                         <i class="arrow"></i>
 
                         <div class="tt-user-card">
 
-                            <a class="btn-exit" href="javascript:void()"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
+                            <a class="btn-exit" href="javascript:void(0)"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
 
                             <div class="u-info">
 
@@ -251,7 +251,7 @@
 
                                 </a>
                         <span style="display:none"><?php $user=Session::get('user');?></span>
-                                <p class="nick" id="J_huyaNavUserCardNick">{{$user['user_name']}}</p>
+                                <p class="nick" id="J_huyaNavUserCardNick">欢迎 {{$user['user_name']}} 登录</p>
 
                                 <p class="user-sign" id="J_huyaNavUserCardSign">...</p>
 
@@ -259,23 +259,23 @@
 
                                     <div class="between">
 
-                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV-</span>
+                                        <span class="from" id="J_huyaNavUserCardExpFrom">LV1</span>
 
                                         <div class="bar-cnt">
 
-                                            <p id="J_huyaNavUserCardBarInfo"></p>
+                                            <p id="J_huyaNavUserCardBarInfo"><?php $info = Session::get('info');?></p>
 
                                             <p class="bar">
 
-                                                <i id="J_huyaNavUserCardExpBar"><b class="J_huyaNavUserCardExpText"></b></i>
+                                                <i id="J_huyaNavUserCardExpBar" style="width:{{$info['u_exp']/2}}%"><b class="J_huyaNavUserCardExpText"></b></i>
 
-                                                <span class="J_huyaNavUserCardExpText"></span>
+                                                <span class="J_huyaNavUserCardExpText">{{$info['u_exp']}}/200</span>
 
                                             </p>
 
                                         </div>
 
-                                        <span class="to" id="J_huyaNavUserCardExpTo">LV-</span>
+                                        <span class="to" id="J_huyaNavUserCardExpTo">LV2</span>
 
                                     </div>
 
@@ -287,15 +287,15 @@
 
                                 <div class="bd">
 
-                                    <span class="type-name">资产</span>
+                                    <span class="type-name">资产<?php $num = Session::get('money');?></span>
 
                                     <ul class="type">
 
-                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">...</em></li>
+                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">{{$num['glod_num']}}</em></li>
 
-                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">...</em></li>
+                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">{{$num['glods']}}</em></li>
 
-                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">...</em></li>
+                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">{{$num['silver_num']}}</em></li>
 
                                     </ul>
 

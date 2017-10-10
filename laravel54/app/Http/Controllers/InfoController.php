@@ -7,16 +7,16 @@ class InfoController extends Controller{
 	//我的信息
 	public function info(){
 		$username=Session::get('user');
-		
+		// print_r($username);die;
 		
 		if (!empty($username)) {
 			$user_id=$username['user_id'];
-			$er=DB::table('userinfo')->first();
+			$er=DB::table('userinfo')->where('user_id',$user_id)->first();
 			Session::put('info',$er);
 			$year=$er['info_birthday']-date('Y-M-D');
 			$location=DB::select("SELECT region_name from huya_region where region_id = ".$er['info_location']);
 
-			$num=DB::table('money')->first();
+			$num=DB::table('money')->where('user_id',$user_id)->first();
 			Session::put('money',$num);
 			// print_r($num);die;
 			$er['error']=1;

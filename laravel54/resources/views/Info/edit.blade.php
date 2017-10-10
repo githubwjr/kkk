@@ -59,24 +59,24 @@
                 		</ul>
 			                		
                 	</form> -->
-                	<form id="userInfoEdit" class="form-edit">
+                	<form id="userInfoEdit" class="form-edit" method="post" action="/edit_do">
                 		<ul>
 							<li>
 	                			<span class="edit-item">昵称</span>
-	                			<input id="edit-nick" class="edit-name" type="text" name="user_name" maxlength="20" readonly="readonly" style="border: 0px;">
+	                			<input id="edit-nick" class="edit-name" type="text" name="user_name" maxlength="20" readonly="readonly" style="border: 0px;" value="{{$res['info_nickname']}}">
 	                			<span class="edit-warning edit-warning_nick"></span>
 	                		</li>
 	                		<li>
 	                			<span class="edit-item">个性签名</span>
-	                			<textarea id="edit-sign" maxlength="20" class="edit-ps"></textarea>
+	                			<textarea id="edit-sign" name="info_desc" maxlength="20" class="edit-ps">{{$res['info_desc']}}</textarea>
 	                			<span class="edit-warning">字段包含敏感字符，请重新输入！</span>
 	                		</li>
-	                		<li>
-	                			<span class="edit-item">手机号</span>
-	                			<input id="edit-nick" class="edit-name" type="text" name="user_name" maxlength="20" style="">
+	                		<!-- <li> -->
+	                			<!-- <span class="edit-item">手机号</span> -->
+	                			<!-- <input id="edit-nick" class="edit-name" type="text" name="user_name" maxlength="20" style=""> -->
 	                			<!-- <input class="edit-sex" type="radio" name="sex" value="1">男  -->
 	                			<!-- <input class="edit-sex edit-sex_female" type="radio" value="2" name="sex" checked="">女 -->
-	                		</li>
+	                		<!-- </li> -->
 <!-- 	                		<li>
 	                			<span class="edit-item">生日</span>
 	                			<div class="select-box sb-year">
@@ -98,8 +98,9 @@
 	                			</div>
 	                			<span>日</span>
 	                		</li> -->
-
-<li class="edit-submit"><a id="edit-submit" class="btn-submit clickstat" href="#" eid="click/grzx/infoedit/save" eid_desc="点击/个人中心/信息编辑/保存">保存</a></li>
+<!-- <a id="edit-submit" class="btn-submit clickstat" href="#" eid="click/grzx/infoedit/save" eid_desc="点击/个人中心/信息编辑/保存"></a> -->
+							{{ csrf_field() }}
+<li class="edit-submit"><input type="submit" class="btn-submit clickstat" style="border:#000;border-radius:7px;background-color:#f80" value="保存"></li>
 </ul>
 
                 	</form>

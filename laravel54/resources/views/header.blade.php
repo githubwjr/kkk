@@ -67,7 +67,7 @@
 
             <h1 id="duya-header-logo" title="虎牙直播-虎牙TV-中国领先的互动直播平台">
 
-                <a href="{{URL::asset('index/index')}}" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="{{URL::asset('images/logo.png')}}" alt="虎牙直播" width="120" height="36"></a>
+                <a href="{{URL::asset('index')}}" class="clickstat" eid="click/navi/logo" eid_desc="点击/导航/logo"><img src="{{URL::asset('images/logo.png')}}" alt="虎牙直播" width="120" height="36"></a>
 
             </h1>
 
@@ -283,24 +283,23 @@
 
                     </a>
 
-                    <div class="nav-expand-list">
+                                        <div class="nav-expand-list">
 
                         <i class="arrow"></i>
 
                         <div class="tt-user-card">
-                        <span style="display:none"><?php $user=Session::get('user')?></span>
 
-                            <a class="btn-exit" href="#"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
+                            <a class="btn-exit" href="javascript:void(0)"><i class="hy-nav-exit-icon"></i><span id="logout">退出</span></a>
 
                             <div class="u-info">
 
-                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('/info')?>" target="_blank">
+                                <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('info')?>" target="_blank">
 
                                     <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
 
                                 </a>
-
-                                <p class="nick" id="J_huyaNavUserCardNick">{{$user['user_name']}}</p>
+                        <span style="display:none"><?php $user=Session::get('user');?></span>
+                                <p class="nick" id="J_huyaNavUserCardNick">欢迎 {{$user['user_name']}} 登录</p>
 
                                 <p class="user-sign" id="J_huyaNavUserCardSign">...</p>
 
@@ -312,13 +311,13 @@
 
                                         <div class="bar-cnt">
 
-                                            <p id="J_huyaNavUserCardBarInfo"></p>
+                                            <p id="J_huyaNavUserCardBarInfo"><?php $info = Session::get('info');?></p>
 
                                             <p class="bar">
 
-                                                <i id="J_huyaNavUserCardExpBar"><b class="J_huyaNavUserCardExpText"></b></i>
+                                                <i id="J_huyaNavUserCardExpBar" style="width:{{$info['u_exp']/2}}%"><b class="J_huyaNavUserCardExpText"></b></i>
 
-                                                <span class="J_huyaNavUserCardExpText"></span>
+                                                <span class="J_huyaNavUserCardExpText">{{$info['u_exp']}}/200</span>
 
                                             </p>
 
@@ -336,15 +335,15 @@
 
                                 <div class="bd">
 
-                                    <span class="type-name">资产</span>
+                                    <span class="type-name">资产<?php $num = Session::get('money');?></span>
 
                                     <ul class="type">
 
-                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">...</em></li>
+                                        <li><i class="gold-bean"></i><em id="J_huyaNavUserCardAssetsGb">{{$num['glod_num']}}</em></li>
 
-                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">...</em></li>
+                                        <li class="type-ticket"><i class="gold-ticket"></i><em id="J_huyaNavUserCardAssetsTk">{{$num['glods']}}</em></li>
 
-                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">...</em></li>
+                                        <li><i class="silver-bean"></i><em id="J_huyaNavUserCardAssetsSb">{{$num['silver_num']}}</em></li>
 
                                     </ul>
 

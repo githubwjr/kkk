@@ -107,9 +107,9 @@
             </div>
             <!-- 账号管理 -->
             <div class="mod mod-basic" id="account_num">
-                <div class="mod-hd">
+                <div class="mod-hd"><?php $user = Session::get('user');?>
                     <h4>账号管理</h4>
-                    <em>（YY:2094643002）</em>
+                    <em>（YY:{{$user['user_yy']}}）</em>
                     <!-- <span class="line line-income"></span> -->
                 </div>
                 <!-- 手机未认证 -->
