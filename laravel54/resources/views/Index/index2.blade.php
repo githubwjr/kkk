@@ -216,7 +216,7 @@ var UDB_SDK_SWTICH = true;
                             @foreach($ress as $val)
                                 <li>
 
-                    <a href="" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"index/remen/1-1","game_id":"9","ayyuid":"791848733"}'>
+                    <a href="http://www.huya.com/dizong" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"index/remen/1-1","game_id":"9","ayyuid":"791848733"}'>
 
                         <div class="img-box">
 
@@ -828,7 +828,7 @@ var UDB_SDK_SWTICH = true;
 
                                                     <li>
 
-                        <a target="_blank" class=" grey" href="{{URL::asset('index/details')}}">
+                        <a target="_blank" class=" grey" href="http://www.huya.com/guying">
 
                         {{$vs['info_nickname']}}                    </a>
 
@@ -855,7 +855,7 @@ var UDB_SDK_SWTICH = true;
 @foreach($res as $v)
                 <li class="game-live-item" gid="2165">
 
-                        <a href="{{URL::asset('index/details')}}" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"index/column/100044/1","game_id":"2165","ayyuid":"1011477490"}'>
+                        <a href="http://www.huya.com/daleilei" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"index/column/100044/1","game_id":"2165","ayyuid":"1011477490"}'>
 
                         <img class="pic" data-original="//screenshot.msstatic.com/yysnapshot/17093cb338f5579399786c38379e29bbb3fe71a8d770?imageview/4/0/w/338/h/190/blur/1" src="images/195x70.jpg" onerror="this.onerror=null; this.src='images/195x70.jpg';" alt="户外虎子的直播" title="户外虎子的直播">
 
@@ -865,7 +865,7 @@ var UDB_SDK_SWTICH = true;
 
                             </a>
 
-                    <a href="{{URL::asset('index/details')}}" class="title new-clickstat"report='{"eid":"click/position","position":"index/column/100044/1","game_id":"2165","ayyuid":"1011477490"}' title="虎子三亚搭讪比基尼大美女" target="_blank"><?php echo $v['info_nickname']?></a>
+                    <a href="http://www.huya.com/daleilei" class="title new-clickstat"report='{"eid":"click/position","position":"index/column/100044/1","game_id":"2165","ayyuid":"1011477490"}' title="虎子三亚搭讪比基尼大美女" target="_blank"><?php echo $v['info_nickname']?></a>
 
                     <span class="txt">
 

@@ -27,7 +27,7 @@
 
         <a target="_blank" href="show?id={{$vas['type_id']}}" class="pic new-clickstat" report='{"eid":"click/postion","position":"gameList/gameCard/1","game_id":"1"}'>
 
-        <img class="pic-img" src="{{$vas['type_img']}}" onerror="this.onerror=null; this.src='images/240x360.jpg';" alt="{{$vas['type_name']}}" title="{{$vas['type_name']}}">
+        <img class="pic-img" src="{{URL::asset('images/'.$vas['type_img'])}}" onerror="this.onerror=null; this.src='images/{{$vas['type_img']}}" alt="{{$vas['type_name']}}" title="{{$vas['type_name']}}">
 
         <h3 class="title">{{$vas['type_name']}}</h3>
 

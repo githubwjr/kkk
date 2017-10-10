@@ -18,7 +18,7 @@
                     @foreach($live as $v)
  <li class="game-live-item" gid="1">
 
- <a href="http://www.huya.com/s7" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}'>
+ <a href="{{URL::asset('index/details')}}" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}'>
 
         <img class="pic"  src="/images/<?=$v['room_img']?>" onerror="this.onerror=null; this.src='/images/<?=$v['room_img']?>';" alt="{{$v['room_name']}}" title="{{$v['room_name']}}">
 
@@ -28,7 +28,7 @@
 
         <em class="tag tag-blue">蓝光</em>    </a>
 
-    <a href="http://www.huya.com/s7" class="title new-clickstat"report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}' title="{{$v['room_name']}}" target="_blank">{{$v['room_name']}}</a>
+    <a href="{{URL::asset('index/details')}}" class="title new-clickstat"report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}' title="{{$v['room_name']}}" target="_blank">{{$v['room_name']}}</a>
 
     <span class="txt">
 

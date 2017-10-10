@@ -108,7 +108,9 @@ class IndexController extends Controller
 	public function category(){
 		$rs=DB::select("select * from huya_type where type_status=:status",['status'=>1]);
 		$data=$this->cate($rs);
+//		print_r($rs);die;
 		$res=DB::select("select * from huya_type where parent_id>:pid",['pid'=>0]);
+//		print_r($res);die;
 		$username=Session::get('user');
 		if (!empty($username)) {
 			$er=array('error'=>1);
@@ -223,8 +225,9 @@ class IndexController extends Controller
 			$anchorid[] = $v['user_id'];
 		}
 		$anid = implode(",",$anchorid);
+		print_r($anid);
 		//根据粉丝的id查询拥有金豆最多的人数
-		$people = DB::select("select user_id from huya_money where user_id in ($anid) order by glod_num desc limit 3");
+		$people = DB::select("select user_id from huya_money where user_id in (2) order by glod_num desc limit 3");
 		$peopleid = array();
 		foreach($people as $v){
 			$peopleid[] = $v['user_id'];
