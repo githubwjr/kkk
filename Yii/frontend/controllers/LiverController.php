@@ -27,7 +27,7 @@ class LiverController extends Controller
         // 偏移量
         $offset = ($p-1)*$pagenum;
         // 总页面数
-        $count = (new yii\db\query())->select('huya_anchor.anchor_id,type_name,room_name,info_nickname')
+        $count = (new yii\db\query())->select('room_info,room_id,huya_anchor.anchor_id,type_name,room_name,info_nickname')
 //        $res = (new yii\db\query())->select('*')
             ->from('huya_anchor')
             ->leftJoin('huya_room','huya_anchor.anchor_id = huya_room.anchor_id')
@@ -39,7 +39,7 @@ class LiverController extends Controller
 //        print_r($count);die;
         // 总页数
         $pages = ceil($count/$pagenum);
-        $data = (new yii\db\query())->select('huya_anchor.anchor_id,type_name,room_name,info_nickname')
+        $data = (new yii\db\query())->select('room_info,room_id,huya_anchor.anchor_id,type_name,room_name,info_nickname')
 //        $data = (new yii\db\query())->select('*')
             ->from('huya_anchor')
             ->leftJoin('huya_room','huya_anchor.anchor_id = huya_room.anchor_id')
@@ -47,6 +47,7 @@ class LiverController extends Controller
             ->leftJoin('huya_userinfo','huya_anchor.user_id = huya_userinfo.user_id')
             ->innerJoin('huya_user','huya_anchor.user_id = huya_user.user_id')
             ->where($search)
+            ->orderBy('room_id')
             ->limit($pagenum)
             ->offset($offset)
             ->all();
