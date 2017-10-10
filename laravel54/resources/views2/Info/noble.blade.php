@@ -1,212 +1,94 @@
 @extends('i')
 @section('content')
+
         <div class="main-col">
             <div class="scroll-content">
-                <div class="mod mod-user-center">
-                    <img style="width:120px;height:120px;cursor:default;" class="user_icon" src="/images/{{$user['info_head']}}" alt="头像">
-
-                    <img class="img_hover" src="http://a.msstatic.com/huya/icenter/2.4/img/header_hover.png" alt="上传图像" style="display: none;">
-                                        <form id="img_submit" enctype="multipart/form-data" method="post" action="http://i.huya.com/index.php?m=Home&amp;do=ajaxUlogo">
-                        <div id="fileImg" class="uploadify" style="height: 120px; width: 120px;"><object id="SWFUpload_0" type="application/x-shockwave-flash" data="base/uploadify/uploadify.swf?preventswfcaching=1507538607287" width="120" height="120" class="swfupload" style="position: absolute; z-index: 1;"><param name="wmode" value="transparent"><param name="movie" value="base/uploadify/uploadify.swf?preventswfcaching=1507538607287"><param name="quality" value="high"><param name="menu" value="false"><param name="allowScriptAccess" value="always"><param name="flashvars" value="movieName=SWFUpload_0&amp;uploadURL=%2Findex.php%3Fm%3DCaptcha%26do%3DsaveImg&amp;useQueryString=false&amp;requeueOnError=false&amp;httpSuccess=&amp;assumeSuccessTimeout=30&amp;params=&amp;filePostName=avatar&amp;fileTypes=*.gif%3B%20*.jpg%3B%20*.png%3B*.jpeg&amp;fileTypesDescription=Image%20Files&amp;fileSizeLimit=1MB&amp;fileUploadLimit=0&amp;fileQueueLimit=999&amp;debugEnabled=false&amp;buttonImageURL=%2F&amp;buttonWidth=120&amp;buttonHeight=120&amp;buttonText=&amp;buttonTextTopPadding=0&amp;buttonTextLeftPadding=0&amp;buttonTextStyle=color%3A%20%23000000%3B%20font-size%3A%2016pt%3B&amp;buttonAction=-110&amp;buttonDisabled=false&amp;buttonCursor=-2"></object><div id="fileImg-button" class="uploadify-button " style="height: 120px; line-height: 120px; width: 120px;"><span class="uploadify-button-text">上传图片</span></div></div><div id="fileImg-queue" class="uploadify-queue"></div>
-                        <input type="hidden" name="uid" value="1842012381">
-                        <input type="hidden" name="w" id="img_width" value="">
-                        <input type="hidden" name="h" id="img_height" value="">
-                        <input type="hidden" name="x1" id="x1" value="">
-                        <input type="hidden" name="y1" id="y1" value="">
-                        <input type="hidden" name="x2" id="x2" value="">
-                        <input type="hidden" name="y2" id="y2" value="">
-                    </form>
-                    <div class="user_info">
-                        <h2 style="font-size: 25px;" class="uesr_n">{{$er['info_nickname']}}      </h2>
-                                                    <!-- woman<span class="user_sex user_sex-female"></span> -->
-                                                    <span class="user_sex user_sex-male"></span>
-                                                
-                        <!-- <p class="yy_num"><span>YY:</span><span id="YY">2094643002</span></p> -->
-                                                <!-- 第三方登陆，昵称同步 -->
-                            <a href="javascript:void(0);" class="third_nick_sync" title="刷新页面同步昵称"></a>
-                            <a href="edit" class="third_change_n clickstat" eid="click/grzx/myinfo/edit" eid_desc="点击/个人中心/我的信息/编辑">编辑</a>
-                                                <p class="user_msg">
-                            <span class="user_age">
-                                {{$er['age']}}岁</span>
-                            <span class="user_add">
-                                {{$er['location']}}                            </span>
-                            <span class="user_ps">
-                            @if(empty($er['info_desc']))
-                            你还没编辑个性签名。
-                            @else
-                            {{$er['info_desc']}}
-                            @endif
-                            </span>
-                        </p>
-                        <div class="detail table-badge" id="grow_level">
-                            <span>LV1</span>
-                            <span class="contact">
-                                <span class="number">{{$er['u_exp']}}/200</span>
-                                <span class="part" style="width:{{$er['u_exp']/2}}%;"></span>
-                                <span class="grow_msg" style="top: -32px; left: 0px; display: none;">
-                                                                        <span class="grow_msg_span">今日获得<span class="num">0</span>点经验值，升级还需<span class="num">200</span>点</span>
-                                                                        <i class="up_arrows"></i>
-                                </span>
-                            </span>
-                            <span>LV2</span>
-                            <a class="question" href="?m=UserLevel">查看等级成长&gt;</a>
+                <div class="mod">
+                    <div class="mod guizu">
+                        <div class="mod-hd">
+                            <a href="http://i.huya.com/" class="back-to">返回</a>
+                            <h3 style="border-left: none;">贵族特权</h3>
                         </div>
-                        <ul id="my_estate">
-                                                            <li>
-                                    <span class="tool">
-                                        <i class="icon icon-gold"></i>
-                                    </span>
-                                    <span class="tool-info">
-                                        <i class="num" style="min-width:28px;">{{$num['glod_num']}}</i>
-                                                                                    <span class="hidden tool_msg">
-                                                <i class="up_arrows"></i>
-                                                <span class="tool_msg_span">金豆：{{$num['glod_num']}}</span>
-                                            </span>
-                                                                                <i class="line"></i>
-                                    </span>
-                                </li>
-                                                            <li>
-                                    <span class="tool">
-                                        <i class="icon icon-coupon"></i>
-                                    </span>
-                                    <span class="tool-info">
-                                        <i class="num" style="min-width:28px;">{{$num['glods']}}</i>
-                                                                                    <span class="hidden tool_msg">
-                                                <i class="up_arrows"></i>
-                                                <span class="tool_msg_span">金豆券：{{$num['glods']}}</span>
-                                            </span>
-                                                                                <i class="line"></i>
-                                    </span>
-                                </li>
-                                                            <li>
-                                    <span class="tool">
-                                        <i class="icon icon-silver"></i>
-                                    </span>
-                                    <span class="tool-info">
-                                        <i class="num" style="min-width:28px;">{{$num['silver_num']}}</i>
-                                                                                    <span class="tool_msg hidden">
-                                                <i class="up_arrows"></i>
-                                                <span class="tool_msg_span">银豆：{{$num['silver_num']}}</span>
-                                            </span>
-                                                                                <i class="line"></i>
-                                    </span>
-                                </li>
-                                                        <li>
-                                <span>
-                                    <a href="http://i.huya.com/index.php?m=MyAccount&amp;do=myAccount" class="money_detail">资产明细</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <a class="btn" id="jdRechargeBtn" href="javascript:void(0);">充值</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- 账号管理 -->
-            <div class="mod mod-basic" id="account_num">
-                <div class="mod-hd"><?php $user = Session::get('user');?>
-                    <h4>账号管理</h4>
-                    <em>（YY:{{$user['user_yy']}}）</em>
-                    <!-- <span class="line line-income"></span> -->
-                </div>
-                <!-- 手机未认证 -->
-                <div class="account_num_list" id="no_phone">
-                    <div class="no_phone"></div>
-                    <div class="msg">
-                        <p class="msg_1">绑定手机</p>
-                        <p class="msg_2">绑定密保手机保障您的账号安全</p>
-                    </div>
-                    <a class="result" id="bindMobile" data-is-thirduser="1" href="javascript:void(0);" target="_blank"></a>
-                </div>
-                <!-- 手机已认证 -->
-                <div class="account_num_list hidden" id="phone">
-                    <div class="phone"></div>
-                    <div class="msg">
-                        <p class="msg_1">修改绑定手机</p>
-                        <p class="msg_2">已绑定：<span class="mobile num"></span></p>
-                    </div>
-                                            <a class="result" id="changeMobile" data-is-thirduser="1" href="javascript:void(0);"></a>
+                        <div class="mod-bd" style="margin-top:20px;">
+                            <a href="http://hd.huya.com/guizu/" target="_blank">
+                                <img width="780" height="240" alt="点击查看贵族特权详情" src="http://assets.dwstatic.com/project/yytv/center/2.9.1/img/guizu-banner.jpg">   
+                            </a>
+
+                            <div class="mod mod-basic mod-wode-tequan" style="margin-top:20px;">
+                                <div class="mod-hd">
+                                    <h4>我的特权</h4>
+                                    <span class="line" style="left:70px;"></span>
+                                    <a href="http://hd.huya.com/guizu/" target="_blank" class="btn-basic">查看贵族特权</a>
+                                </div>
+                                <div class="mod-bd" id="nobleInfo" style="margin-bottom:80px; display:none; position: relative;">
+                                    <div class="biaoji">
+                                        <div class="biaoji-tu">
+                                            <div id="biaoji_tu"></div>
+                                            <div class="biaoji-shuoming" id="nobleName"></div>
+                                        </div>                                   
                                     </div>
-                
-                <div class="account_num_list">
-                    <div class="password"></div>
-                    <div class="msg">
-                        <p class="msg_1">修改密码</p>
-                        <p class="msg_2">建议定期修改密码，保证账号安全</p>
-                    </div>
-                                        <a class="result" href="javascript:void(0);" id="thirdLoginPassword" data-logintype="qq" data-userinfo="1842012381"></a>
-                        <!-- 第三方登陆修改密码iframe -->
-                        <div class="box third_box" id="thirdBindYY" style="display:none;">
-                            <div class="box-hd">
-                                <h3 class="title">绑定YY号</h3>
-                                <a href="javascript:void(0);" class="btn-close J_btnClose" id="thirdClose" title="关闭">关闭</a>
+                                    <div class="qixian">
+                                        <div class="info">为您办理开通的主播：<span id="pName"></span></div>
+                                        <div class="info">有效期至：<span id="validDate"></span></div>
+
+                                        <div class="mini-info">
+                                            注：有效期前续费，仅需 <span class="num" id="onlyNeedYb"></span> Y币，节省 <span class="num" id="saveYb"></span> Y币，
+                                            续费成功立赠价值 <span class="num" id="rebackYb"></span> Y币金豆券。
+                                        </div>
+
+                                        <div class="btn-group" style="text-align:left;margin-top:10px;">
+                                            <a href="javascript:;" class="btn btn-basic" id="renewBtn">马上续费</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="kong" id="kong">
+                                    尚未开通贵族服务。
+                                </div>
                             </div>
-                            <div class="box-bd">
-                                <div class="cont cont-tips">
-                                    <div class="bind_iframe" id="bindYYIframe">
-                                        <iframe src="" frameborder="0"></iframe>
+
+                            <div class="mod mod-basic mod-banli-tequan" style="display:none;">
+                                <div class="mod-hd">
+                                    <h4>通过我办理的特权</h4>
+                                    <span class="line" style="left:125px;"></span>
+                                </div>
+                                <div class="mod-bd">
+                                    <table id="presentTable">
+                                        <thead>
+                                            <tr style="background: #f2f3f4;">
+                                                <th width="20%">昵称</th>
+                                                <th width="20%">YY号</th>
+                                                <th width="20%">
+                                                    <a href="javascript:;" id="openServiceSort" data-sort="0" data-type="level">
+                                                        开通服务
+                                                        <span class="arrow"></span>
+                                                    </a>
+                                                </th>
+                                                <th width="20%">
+                                                    <a href="javascript:;" id="validDateSort" data-sort="0" data-type="date">
+                                                        到期时间
+                                                        <span class="arrow"></span>
+                                                    </a>
+                                                </th>
+                                                <th width="20%">提成</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="presentNobleTable">
+                                            <tr><td colspan="5">数据加载中...</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mod-page" id="presentNobleTablePage" style="display:none;">
+                                       
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--  -->
-                                </div>
-                <div style="clear:both;"></div>
-                                                <!-- 不是主播 -->
-                <div class="account_num_list">
-                    <div class="no_anchor"></div>
-                    <div class="msg">
-                        <p class="msg_1">成为主播</p>
-                        <p class="msg_2">成为万人敬仰的虎牙主播</p>
                     </div>
-                    <a class="result" href="http://www.huya.com/e/zhubo" target="_blank"></a>
                 </div>
-                            </div>
-        </div>
-
-    </div>
-    <!-- 绑定手机 -->
-    <!-- <div class="bind">
-        <div class="box_top">
-            <a href="javascript:void(0);" class="close">关闭</a>
-        </div>
-    </div> -->
-    <!-- 弹窗背景 -->
-    <div class="bg"></div>
-    <!-- 修改头像 -->
-    <div id="the_img">
-        <div class="box_top" style="cursor: move;">
-            <span style="font-size:16px;font-weight:bloder;">修改头像</span>
-            <a href="javascript:void(0);" class="close">关闭</a>
-        </div>
-        <!-- 图片裁剪 -->
-        <div id="img_cut">
-            <div class="cut_left">
-                <p class="pre_title">预览</p>
-                <div id="preview_div" style="overflow:hidden;width:100px;height:100px;">
-                    <img style="max-width:none;" id="preview" src="">
-                </div>
-                <p class="per_size">100X100</p>
-            </div>
-            <div class="cut_right">
-                <div id="aaaa" style="width:300px;margin:0 auto;position:relative;">
-                    <img id="header_photo" src="" style="">
-                <div style="position: fixed; overflow: hidden; z-index: 2003; left: 0px; top: 0px; width: 100px; height: 100px; display: block;"><div class="imgareaselect-selection" style="position: absolute; font-size: 0px; width: 100px; height: 100px; left: 0px; top: 0px;"></div><div class="imgareaselect-border1" style="position: absolute; font-size: 0px; left: 0px; top: 0px; width: 100px; height: 100px;"></div><div class="imgareaselect-border2" style="position: absolute; font-size: 0px; left: 0px; top: 0px; width: 100px; height: 100px;"></div><div class="imgareaselect-border3" style="position: absolute; font-size: 0px; left: 0px; top: 0px; width: 100px; height: 100px;"></div><div class="imgareaselect-border4" style="position: absolute; font-size: 0px; left: 0px; top: 0px; width: 100px; height: 100px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 0px; top: 0px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 93px; top: 0px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 93px; top: 93px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 0px; top: 93px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 46px; top: 0px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 93px; top: 46px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 46px; top: 93px;"></div><div class="imgareaselect-handle" style="position: absolute; font-size: 0px; z-index: 2002; width: 5px; height: 5px; left: 0px; top: 46px;"></div></div><div class="imgareaselect-outer" style="position: fixed; overflow: hidden; z-index: 2001; width: 0px; display: block;"></div><div class="imgareaselect-outer" style="position: fixed; overflow: hidden; z-index: 2001; width: 100px; height: 0px; display: block;"></div><div class="imgareaselect-outer" style="position: fixed; overflow: hidden; z-index: 2001; display: block;"></div><div class="imgareaselect-outer" style="position: fixed; overflow: hidden; z-index: 2001; width: 100px; display: block;"></div></div>
             </div>
         </div>
-        <div style="clear:both;"></div>
-        <div class="box_bot">
-            <a>温馨提示：仅支持jpg、jpeg、png格式，大小不超过1M</a>
-            <a href="javascript:void(0);" class="btn sure_img">确定</a>
-            <a href="javascript:void(0);" class="btn quit_img">取消</a>
-        </div>
     </div>
-    <script type="text/javascript">
-
-    </script>
+     
 <style>
     .j-pop{
         color:#e74c3c;margin: 10px;display: inline-block;
@@ -1290,105 +1172,179 @@
 
 
 
-<div class="box" id="goldbean_expiry_date_box" style="width: 320px;">
-    <div class="box-hd" style="width:300px;">
-        <h3 class="title">金豆券有效期</h3>
-        <a href="#1" class="btn-close J_btnClose" title="关闭">关闭</a>
-    </div>
-    <div class="box-bd" style="width:320px;max-height:300px; overflow-y:scroll; overflow-x:hidden;">
-        <table class="table goldbean-expiry-date-table">
-            <thead>
-                <tr>
-                    <th style="text-align:center;">金豆券数</th>
-                    <th style="text-align:center;">有效期至</th>
-                </tr>
-            </thead>
-            <tbody id="goldbean_expiry_date_table"></tbody>
-        </table>
-        <p style="margin:15px 20px 5px;"> *金豆自获得日起有90天有效期，过期失效，</p>
-        <p style="margin:5px 20px;">&nbsp;使用时优先消耗即将到期的金豆券。</p>
-    </div>
-</div>
 
-<!-- 第三方手机号 -->
-<div class="box third_box" id="popThirdBind">
-    <div class="box-hd">
-        <h3 class="title">绑定手机号</h3>
-        <a href="#1" class="btn-close J_btnClose" id="closeThirdPop" title="关闭">关闭</a>
-    </div>
-
-    <div class="box-bd">
-        <div class="cont cont-tips">
-            <div class="bind_iframe" id="bindIframe">
-                <iframe src="" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 领取任务按钮弹窗 -->
-<div class="box" id="getTask">
-    <div class="box-hd">
-        <h3 class="title">新手任务-领取</h3>
-        <a href="#1" class="btn-close J_btnClose" title="关闭">关闭</a>
-    </div>
-
-    <div class="box-bd">
-        <div class="cont cont-tips">
-            <p>领取成功</p>
-            <p>获得EXP+<span id="exper"></span></p>
-        </div>
-        <div class="box_bot">
-            <a href="javascript:void(0);" class="btn">确定</a>
-        </div>
-    </div>
-</div>
-<!-- 修改头像昵称验证弹窗 -->
-<div class="box" id="check_accesstoken">
+<div class="box custom-popbox-result" id="confirmRenewPopbox" style="">
     <div class="box-hd">
         <h3 class="title">提示</h3>
-        <a href="#1" class="btn-close J_btnClose" title="关闭">关闭</a>
+        <a href="javascript:void(0);" class="btn-close J_btnClose" title="关闭">关闭</a>
     </div>
 
+    <!-- 验证手机 -->
+    <div class="box-bd hide" id="validMobile">
+        <i class="icon icon-info"></i>
+        <p class="info" style="text-align:left;">即将支付 <span class="num payYb"></span> Y币</p>
+        <p class="info" style="text-align:left;font-size: 12px; color: #999;">
+            为了保障账户安全，请验证手机<span id="phone_number"></span>
+        </p>
+        <p class="info" style="text-align:left;">
+            <label>
+                <input type="text" style="width:80px; height:30px; padding-left: 5px" id="captchaInput" placeholder="验证码">
+                <a href="javascript:;" id="sendCaptchaBtn" onclick="nobleUtil.sendCaptcha();">获取验证码</a>
+                <span id="sendCaptchaInfo"></span>
+                <span id="validMobileErrorInfo" style="color:red;"></span>
+            </label>
+        </p>
+        <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-cancel" onclick="nobleUtil.buyNobleByCaptcha();">确认支付</a>
+        </div>
+    </div>
+
+    <!-- 绑定手机 -->
+    <div class="box-bd hide" id="bindUserMobile">
+        <i class="icon icon-info"></i>
+        <p class="info" style="text-align:left;">即将支付 <span class="num payYb"></span> Y币</p>
+        <p class="info" style="text-align:left;font-size: 12px; color: #999;">
+            为了保障账户安全，请先<a href="https://aq.yy.com/mb/mob/index.do" target="_blank">绑定密保手机</a>
+        </p>
+        <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-cancel">确认支付</a>
+        </div>
+    </div>
+
+    <!-- Y币不够， 需要充值 -->
+    <div class="box-bd hide" id="notEnoughtYb">
+        <i class="icon icon-info"></i>
+        <p class="info" style="text-align:left;">即将支付 <span class="num payYb"></span> Y币</p>
+        <p class="info" style="text-align:left;font-size: 12px; color: #999;">
+           当前账户拥有 <span class="num" id="currentYb"></span> Y币，请充值 <span class="num" id="payNeedYb"></span> Y币。
+        </p>
+        <div class="btn-group">
+            <a href="https://pay.duowan.com/userDepositDWAction.action" target="_blank" class="btn btn-confirm" onclick="nobleUtil.checkRecharge();">前往充值</a>
+            <a href="javascript:void(0);" class="btn btn-cancel J_btnClose">取消</a>
+        </div>
+    </div>
+
+    <!-- 充值加载中 -->
+    <div class="box-bd hide" id="loadingRecharge">
+        <img src="http://assets.dwstatic.com/project/yytv/center/2.9.1/img/loading2.gif" class="icon" style="margin-right:10px; ">
+        <p class="info" style="text-align:left; margin-left:90px; font-size:16px;">请完成充值</p>
+        <p class="info" style="text-align:left; margin-left:90px; font-size: 12px; color: #999;">
+           自动检测中，请不要关闭此对话框
+        </p>
+    </div>
+
+    <!-- 充值失败 -->
+    <div class="box-bd hide" id="rechargeError">
+        <i class="icon icon-info"></i>
+        <p class="info" style="text-align:left;">抱歉，充值失败。 </p>
+        <p class="info" style="text-align:left;font-size: 12px; color: #999;">
+           当前账户拥有 <span class="num" id="currentYb2"></span> Y币，请充值 <span class="num" id="payNeedYb2"></span> Y币。
+        </p>
+        <div class="btn-group">
+            <a href="https://pay.duowan.com/userDepositDWAction.action" target="_blank" class="btn btn-confirm" onclick="nobleUtil.checkRecharge();">前往充值</a>
+            <a href="javascript:void(0);" class="btn btn-cancel J_btnClose">取消</a>
+        </div>
+    </div>
+
+    <!-- 当前贵族身份为活动赠送 -->
+    <div class="box-bd hide" id="nobleTypeOne">
+        <i class="icon icon-error"></i>
+        <p class="info" style="text-align:left;">当前贵族身份为活动赠送，无法续费。</p>
+        <p class="info" style="text-align:left;">
+            详情请咨询官方工作人员。
+        </p>
+        <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-cancel J_btnClose">确定</a>
+        </div>
+    </div>
+
+    <!-- 支付成功 -->
+    <div class="box-bd hide" id="successPay">
+        <i class="icon icon-success"></i>
+        <p class="info" style="text-align:left; margin-left:60px;">支付成功！</p>
+        <p class="info" style="text-align:left; margin-left:60px;">
+            返还的的金豆券价值为：<span id="rebackGold" class="num"></span> Y币。
+        </p>
+        <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-confirm" onclick="location.reload();">确定</a>
+        </div>
+    </div>
+
+    <!-- 支付失败 -->
+    <div class="box-bd hide" id="errorPay">
+        <i class="icon icon-error"></i>
+        <p class="info" style="text-align:left; margin-left:60px;">支付失败！</p>
+        <p class="info" style="text-align:left; margin-left:60px;" id="errorPayInfo"></p>
+        <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-confirm" onclick="location.reload();">确定</a>
+        </div>
+    </div>
+
+    <!-- 支付结果查询中 -->
+    <div class="box-bd hide" id="loadingPayResult">
+        <img src="http://assets.dwstatic.com/project/yytv/center/2.9.1/img/loading2.gif" class="icon" style="margin-right:10px; ">
+        <p class="info" style="text-align:left; margin-left:90px; font-size:16px;">支付结果查询中...</p>
+        <p class="info" style="text-align:left; margin-left:90px; font-size: 12px; color: #999;">
+           支付结果查询中，请不要关闭此对话框
+        </p>
+    </div>
+
+
+</div>
+
+<!-- 续费支付框 -->
+<div class="box custom-popbox-result renew-pay-popbox" id="renewPopbox" style="">
+    <div class="box-hd">
+        <h3 class="title">续费</h3>
+        <a href="javascript:void(0);" class="btn-close J_btnClose" title="关闭">关闭</a>
+    </div>
     <div class="box-bd">
-        <div class="cont cont-tips">
-            <p>登录信息已更新，请重新登录再试!</p>
-        </div>
-        <div class="box_bot">
-            <a href="javascript:void(0);" class="btn" id="check_loggout">重新登录</a>
-        </div>
+        <div>请选择续费时长</div>
+        <form>
+            <div class="form-group" id="payYbInputFormGroup">
+                <input type="hidden" id="payYbInput">
+                <label for="oneMonth" style="margin-right:20px;"><input id="oneMonth" name="renewTime" onclick="setTimeValue(1)" checked="checked" type="radio">一个月</label>
+                <label for="threeMonths" style="margin-right:20px;"><input id="threeMonths" name="renewTime" onclick="setTimeValue(3)" type="radio">三个月</label>
+                <label for="sixMonths" style="margin-right:20px;"><input id="sixMonths" name="renewTime" onclick="setTimeValue(6)" type="radio">六个月</label>
+                <label for="otherMonths" style="margin-right:20px;">
+                    <input id="otherMonths" name="renewTime" type="radio">
+                    <input id="otherMonthsInput" style="width:30px;height:30px;padding-left:5px;" onkeyup="setTimeValue($(this).val())">个月
+                </label>
+                <label style="color:red; display:none;" id="timeErrorInfo">请输入有效值</label>
+            </div>
+            <div class="renew-info">
+                <span id="biaoji_tu_2"></span>
+                <span class="num" id="biaoji_name_2"></span> 有效期将延长至 <span id="newValidDate"></span>
+                <div class="mini-info">
+                    (一个月按30天记，有效期最高续满24个月)
+                </div>
+            </div>
+            <div style="font-size: 16px;">
+                即将支付 <span class="num" id="needYb"></span> Y币，立返价值 <span class="num" id="returnYbGoldBean">720,000</span> Y币金豆券
+            </div>
+            <div class="btn-group">
+                <a href="javascript:void(0);" class="btn btn-confirm" id="renewConfirmBtn">确认支付</a>
+                <a href="javascript:void(0);" class="btn btn-cancel J_btnClose">取消</a>
+            </div>
+        </form>
     </div>
 </div>
 <script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.0.1/js/profile.js"></script>
 <script src="http://assets.dwstatic.com/b=project/yytv/center/2.4/js&amp;f=lego.popupbox.js"></script>
+<script src="http://assets.dwstatic.com/project/yytv/center/2.9.1/js/moment.js?t=20150610"></script>
+<link rel="stylesheet" type="text/css" href="https://res.duowan.com/pay/auth/web/style.css">
+<script src="http://res.duowan.com/pay/auth/js/auth.js"></script>
 <script type="text/javascript">
     var embedYyUrl = "http://q.huya.com/yy/";
     window.dataType = "jsonp";
-    
-     $('body').on('click','.clickstat',function(){
-        var that = $(this);
-        report({
-          eid:that.attr('eid'),
-          eid_desc:that.attr('eid_desc')
-        });
-    });
 </script>
-<script src="http://assets.dwstatic.com/project/yytv/center/2.9.1/js/moment.js?t=20150610"></script>
-<!-- <script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.1/js/index.js?t=20160303v1"></script> -->
-<!-- add js -->
-<!-- 图片裁剪 -->
-<script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.33/js/imgPre.js"></script>
-<script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.33/js/jquery.imgareaselect.pack.js"></script>
-<script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.33/js/imgCut.js"></script>
-<!-- 图片裁剪end -->
-<!-- <script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.4/js/new_home.js"></script> -->
-<!-- <script type="text/javascript" src="http://a.msstatic.com/huya/icenter/2.10/js/new_home_second.js"></script> -->
-<!-- 贵族续费 -->
-<!-- <script src="http://assets.dwstatic.com/b=project/yytv/center/2.4/js&f=lego.popupbox.js"></script>
-<script src="http://a.msstatic.com/huya/icenter/2.5/js/guizutequan.js"></script> -->
-<!-- 贵族续费end -->
-<script type="text/javascript" src="//a.msstatic.com/huya/icenter/main/js/new_home__f9590e0.js"></script>
-<!-- end -->
-<!-- 第三方登陆修改密码 -->
-<script src="http://a.msstatic.com/huya/icenter/2.18/js/thirdLoginPassword.js"></script>
-<!-- 第三方登陆修改密码 -->
-@endsection
+<script src="http://assets.dwstatic.com/project/yytv/center/2.9.1/js/livepay.js?t=20150610"></script>
+<!-- <script src="http://assets.dwstatic.com/project/yytv/center/2.9.1/js/guizutequan.js?t=20150610"></script> -->
+
+<script src="http://a.msstatic.com/huya/icenter/2.5/js/guizutequan.js"></script>
+<!-- 展示用户贵族开通主播，以及uid -->
+<script src="http://a.msstatic.com/huya/icenter/2.15/js/show_guizutequan.js"></script>
+<!-- 展示用户贵族开通主播，以及uid  -->
+
+
+   @endsection

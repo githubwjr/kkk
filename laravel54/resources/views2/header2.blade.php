@@ -73,13 +73,13 @@
 
             <div class="duya-header-nav">
 
-                <span class="hy-nav-link"><a href="<?=url('/index')?>" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
+                <span class="hy-nav-link"><a href="<?=url('/')?>" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
 
-                <span class="hy-nav-link duya-header-on"><a href="{{URL::asset('index/show')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
+                <span class="hy-nav-link"><a href="{{URL::asset('index/show')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
 
                 <div class="hy-nav-expand">
 
-                    <div class="hy-nav-title nav-main" id="nav-main"><a href="{{URL::asset('index/category')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">分类</a><i class="icon-arrow"></i></div>
+                    <div class="hy-nav-title nav-main on" id="nav-main"><a href="{{URL::asset('index/category')}}" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">分类</a><i class="icon-arrow"></i></div>
 
                     <div class="nav-expand-list nav-expand-game">
 
@@ -363,7 +363,7 @@
 
                                     <li class="links-i">
 
-                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>
+                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>                                        
 
                                             <i></i>
 
@@ -671,8 +671,6 @@ var UDB_SDK_SWTICH = true;
 
     <script src="{{URL::asset('js/jquery.lazyload_769f44a.js')}}" data-fixed="true"></script>
 
-    <script src="{{URL::asset('js/jquery-3.2.1.min.js')}}" data-fixed="true"></script>
-
     <script type="text/javascript" charset="utf-8" src="{{URL::asset('js/auto_combine_755f1_220082a.js')}}"></script>
 <script>
 
@@ -788,11 +786,11 @@ var _hmt = _hmt || [];
         $("#logout").click(function(){
             $.ajax({
                 type:'get',
-                url:'logout',
+                url:'index/logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='/';
+                        location.href='index';
                     }
                 }
             })

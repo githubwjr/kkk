@@ -20,7 +20,8 @@
 
  <a href="http://www.huya.com/s7" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}'>
 
-        <img class="pic"  src="/images/<?=$v['room_img']?>" onerror="this.onerror=null; this.src='/images/<?=$v['room_img']?>';" alt="{{$v['room_name']}}" title="{{$v['room_name']}}">
+        <img class="pic"  src="/images/<?=$v['room_img']?>" onerror="this.onerror=null; this.src='http://www.one.com/laravel54/public/images/<?=$v['room_img']?>';" alt="{{$v['room_name']}}" title="{{$v['room_name']}}">
+{{--        <img class="pic"  src="{{URL::asset(images/<?=$v['room_img']?>)}}" onerror="this.onerror=null; this.src='http://www.one.com/laravel54/public/images/<?=$v['room_img']?>';" alt="{{$v['room_name']}}" title="{{$v['room_name']}}">--}}
 
                 <div class="item-mask"></div>
 

@@ -48,20 +48,22 @@ class IndexController extends Controller
 	public function show(){
 
 		//类型id
-		isset($_GET['id'])?$type_id=$_GET['id'] : $type_id='';
+		$type_id = isset($_GET['id'])?$_GET['id'] : '';
 	
 		$rs=DB::select("select * from huya_type where type_status=:status",['status'=>1]);
 		// print_r($rs);die;
 		$data=$this->cate($rs);
 
 		$live=$this->live($type_id);
-		// print_r($live);die;
+//		 print_r($live);die;
 		$username=Session::get('user');
+//		print_r($username);die;
 		if (!empty($username)) {
 			$er=array('error'=>1);
 		}else{
 			$er=array('error'=>0);
 		}
+//		print_r($er);die;
 		return view("index.show",['data'=>$data,'live'=>$live,'er'=>$er]);
 	}
 	//直播房间列表
@@ -155,10 +157,10 @@ class IndexController extends Controller
 		Session::put('user',$user_name);
 //		print_r($user_name);die;
 
-		$er=DB::table('userinfo')->where('user_id',$user_name['user_id'])->first();
-		Session::put('info',$er);
+		$res=DB::table('userinfo')->where('user_id',$user_name['user_id'])->first();
+		Session::put('info',$res);
 
-		$num=DB::table('money')->where('user_id',$user_name['uesr_id'])->first();
+		$num=DB::table('money')->where('user_id',$user_name['user_id'])->first();
 		Session::put('money',$num);
 
 		return $flag;

@@ -6,7 +6,6 @@ use Illuminate\Http\Response;
 use Session;
 class EditController extends Controller
 {
-//	用户信息修改页面
 	public function edit()
 	{
 		$user=Session::get('user');
@@ -21,7 +20,6 @@ class EditController extends Controller
 //		print_r($er);die;
 		return view('info.edit',['er'=>$er,'res'=>$res]);
 	}
-//	修改操作
 	public function edit_do()
 	{
 		$user = Session::get('user');

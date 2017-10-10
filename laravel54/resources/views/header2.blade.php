@@ -275,7 +275,7 @@
 
                     <a class="nav-user-title" href="<?=url('/info')?>" target="_blank">
 
-                        <img id="login-userAvatar" src="{{URL::asset('images/10001.jpg')}}" alt="头像" />
+                        <img id="login-userAvatar" src="/images/<?= Session::get('info')['info_head']?>" alt="头像" />
 
                         <span id="login-username"></span>
 
@@ -295,7 +295,7 @@
 
                                 <a class="avatar" id="J_huyaNavUserCardAvatar" href="<?=url('info')?>" target="_blank">
 
-                                    <img src="{{URL::asset('images/10001.jpg')}}" id="J_huyaNavUserCardAvatarImg" />
+                                    <img src="/images/<?= Session::get('info')['info_head']?>" id="J_huyaNavUserCardAvatarImg" />
 
                                 </a>
                         <span style="display:none"><?php $user=Session::get('user');?></span>
@@ -786,11 +786,11 @@ var _hmt = _hmt || [];
         $("#logout").click(function(){
             $.ajax({
                 type:'get',
-                url:'index/logout',
+                url:'logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='index';
+                        location.href='/';
                     }
                 }
             })

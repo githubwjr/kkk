@@ -747,11 +747,11 @@
         $("#logout").click(function(){
             $.ajax({
                 type:'get',
-                url:'logout',
+                url:'index/logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='/';
+                        location.href='index';
                     }
                 }
             })

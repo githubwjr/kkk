@@ -363,7 +363,7 @@
 
                                     <li class="links-i">
 
-                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>
+                                        <a href="http://i.huya.com/" target="_blank" class="new-clickstat" report='{"eid":"click/position","position":"header/usercard/entrance1"}'>                                        
 
                                             <i></i>
 
@@ -671,8 +671,6 @@ var UDB_SDK_SWTICH = true;
 
     <script src="{{URL::asset('js/jquery.lazyload_769f44a.js')}}" data-fixed="true"></script>
 
-    <script src="{{URL::asset('js/jquery-3.2.1.min.js')}}" data-fixed="true"></script>
-
     <script type="text/javascript" charset="utf-8" src="{{URL::asset('js/auto_combine_755f1_220082a.js')}}"></script>
 <script>
 
@@ -788,11 +786,11 @@ var _hmt = _hmt || [];
         $("#logout").click(function(){
             $.ajax({
                 type:'get',
-                url:'logout',
+                url:'index/logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='/';
+                        location.href='index';
                     }
                 }
             })

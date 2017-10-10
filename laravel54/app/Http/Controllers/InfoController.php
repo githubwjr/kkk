@@ -11,12 +11,14 @@ class InfoController extends Controller{
 		
 		if (!empty($username)) {
 			$user_id=$username['user_id'];
-//			$er=DB::table('userinfo')->where('user_id',$user_id)->first();
+			$er=DB::table('userinfo')->where('user_id',$user_id)->first();
 //			Session::put('info',$er);
 			$year=$er['info_birthday']-date('Y-M-D');
 			$location=DB::select("SELECT region_name from huya_region where region_id = ".$er['info_location']);
 
 			$num=DB::table('money')->where('user_id',$user_id)->first();
+			$user=DB::table('userinfo')->where('user_id',$user_id)->first();
+//			print_r($user);die;
 //			Session::put('money',$num);
 			// print_r($num);die;
 			$er['error']=1;
@@ -25,7 +27,8 @@ class InfoController extends Controller{
 		}else{
 			$er=array('error'=>0);
 		}
-		return view('info.info',['er'=>$er,'num'=>$num]);
+//		print_r($user);die;
+		return view('info.info',['er'=>$er,'num'=>$num,'user'=>$user]);
 	}
 
 	//等级成长
