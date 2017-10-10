@@ -196,6 +196,47 @@ class IndexController extends Controller
 		return array('error'=>$error,'msg'=>$msg);
 	}
 
+	//展示主播详情
+	public  function details()
+	{
+		$username=Session::get('user');
+		//判断用户是否登录;
+		if (!empty($username)) {
+			$er=array('error'=>1);
+		}else{
+			$er=array('error'=>0);
+		}
+		$use_id = $username['user_id'];
+		//通过用户id查询
+		$nicks = DB::table("userinfo")->where([['user_id',$use_id]])->first();
+		//查询出类型id
+		$type_id = DB::table("anchor")->where([['user_id',$use_id]])->first();
+		$type = $type_id['anchor_type'];
+		//查询出房间名称
+		$room =DB::table("room")->where([['type_id',$type]])->first();
+		$anchor = $room['anchor_id'];
+		//通过主播的id查询出粉丝的关注人的id
+		$fen = DB::select("select user_id from huya_user_anchor where anchor_id='$anchor'");
+//        var_dump($fen);die;
+		$anchorid = array();
+		foreach($fen as $v){
+			$anchorid[] = $v['user_id'];
+		}
+		$anid = implode(",",$anchorid);
+		//根据粉丝的id查询拥有金豆最多的人数
+		$people = DB::select("select user_id from huya_money where user_id in ($anid) order by glod_num desc limit 3");
+		$peopleid = array();
+		foreach($people as $v){
+			$peopleid[] = $v['user_id'];
+		}
+		$peole_id = $this->test($peopleid);
+//        var_dump($peole_id);die;
+		//查询粉丝名字
+		$name  = DB::select("select user_name from huya_user where user_id in ($peole_id)");
+//        var_dump($name);die;
+		return view('index.details',['er'=>$er,'nicks'=>$nicks,'room'=>$room,'name'=>$name]);
+	}
+
 	//退出登陆
 	public function logout(){
         Session::flush();
