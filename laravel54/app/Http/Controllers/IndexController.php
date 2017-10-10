@@ -153,6 +153,14 @@ class IndexController extends Controller
 			$user_name=$phone;
 		}
 		Session::put('user',$user_name);
+//		print_r($user_name);die;
+
+		$er=DB::table('userinfo')->where('user_id',$user_name['user_id'])->first();
+		Session::put('info',$er);
+
+		$num=DB::table('money')->where('user_id',$user_name['uesr_id'])->first();
+		Session::put('money',$num);
+
 		return $flag;
 	}
 	public function regin(){
