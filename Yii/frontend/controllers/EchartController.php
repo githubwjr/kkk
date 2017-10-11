@@ -86,13 +86,34 @@ class EchartController extends Controller
     public function actionShow_days()
     {
 //        echo 2;die;
-//        $call = \Yii::$app->request->get('call');
+        $call = \Yii::$app->request->get('call');
+        $start_time = \Yii::$app->request->get('start_time');
+        $end_time = \Yii::$app->request->get('end_time');
         $data = (new \yii\db\Query())->select('count(add_date) as nums,add_date')
             ->from('huya_userinfo')
             ->groupBy('add_date')
+            ->where(['between','add_date',$start_time,$end_time])
             ->all();
-        print_r($data);
-        die;
+        if(!$data)
+        {
+            echo $call.'('.json_encode(['code'=>404]).')';exit;
+        }
+//        print_r($data);
+//        die;
+//        将SQL数据一次性查出,剩下的交给PHP去执行,可减轻数据库压力
+        $nums = array();
+
+        $msg = array();
+        foreach($data as $key => $val)
+        {
+            $nums[$key] = $val['nums'];
+            $msg[$key] = $val['add_date'];
+        }
+//        print_r($nums);
+//        echo '<hr />';
+//        print_r($msg);
+//        die;
+        echo $call.'('.json_encode(['code'=>200,'nums'=>$nums,'msg'=>$msg]).')';
     }
 
 }
