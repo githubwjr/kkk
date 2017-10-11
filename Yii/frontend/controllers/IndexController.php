@@ -149,7 +149,12 @@ class IndexController extends Controller
         $res = (new \yii\db\Query())->select('*')
         ->from('huya_room')
         ->all();
-        // print_r($res);die;
+        // echo htmlspecialchars('<p>1</p>');/
+        // exit;
+        foreach ($res as $key => $value) {
+            $value['room_info'] = htmlspecialchars_decode($value['room_info']);
+        }
+        print_r($res);die;
         echo $call.'('.json_encode($res).')';
     }
     public function actionRoom_add()
@@ -157,7 +162,7 @@ class IndexController extends Controller
         $call = Yii::$app->request->get('callback');
         $data = Yii::$app->request->get();
         // print_r($data);
-        $res = Yii::$app->db->createCommand()->insert('huya_room',['room_name'=>$data['room_name']])->execute();
+        $res = Yii::$app->db->createCommand()->insert('huya_room',['room_name'=>$data['room_name'],'room_info'=>$data['room_info']])->execute();
         // if(!$res)
         echo $call.'('.json_encode($this->success).')';
     }
