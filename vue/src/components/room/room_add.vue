@@ -16,8 +16,17 @@
 										<div class="col-sm-9">
 											<input class="input-sm" type="text" id="form-field-4" v-model="room_name" />
 											<div class="space-2"></div>
+											
 										</div>
+										
+										<!--<div  id="container" name="content"></div>-->
+
 									</div>
+									<!--<div  id="container" name="room_info" v-model="room_info"></div>-->
+									<script id="container" name="content" type="text/plain">
+        {{room_info}}
+    </script>
+    
 									<!--<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 礼物价格 </label>
 
@@ -66,7 +75,9 @@
 	{
 		return{
 			room_name:'',
+			room_info:'房间详情',
 			userList:'',
+			container:'',
 		}
 	},
 	mounted: function() {
@@ -77,13 +88,24 @@
 	    }, function(response) {
 	        console.log(response)
 	    });   
+	    
 	},
 	methods:
 	{
+		getUEContent() { // 获取内容方法
+//      return this.editor.getContent()
+        UE.getEditor('container').getContent()
+   },
 		add:function(){
+//			alert(UE.getEditor('container').getContent())
+//			alert(getUEContent())
+//			alert(this.container)
+//			alert(this.container.getUEContent())
+//			alert(this.room_info)
+//			alert($('#container').val())
 			$.ajax({
              url: "http://yii.929.vip/?r=index/room_add",
-             data: {room_name:this.room_name},
+             data: {room_name:this.room_name,room_info:UE.getEditor('container').getContent()},
              dataType:"jsonp",
              jsonp:'callback',
              success: function(msg){
@@ -99,4 +121,7 @@
 		}
 	}
 }
+
 </script>
+<!-- 实例化编辑器 -->
+

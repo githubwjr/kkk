@@ -53,7 +53,7 @@
 															ID
 														</th>
 														<th>房间名称</th>
-														<th>所属主播</th>
+														<th>房间介绍</th>
 														<th class="hidden-480">房间状态</th>
 
 														<!--<th>
@@ -70,7 +70,7 @@
 														<!--<td colspan="7">123</td>-->
 														<td>{{val.room_id}}</td>
 														<td>{{val.room_name}}</td>
-														<td></td>
+														<td>{{val.room_info}}</td>
 														<td v-if="val.is_del == 0">正常</td>
 														<td v-else>禁用</td>
 														<td><div class="visible-md visible-lg hidden-sm hidden-xs btn-group"><button class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></button><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button><button class="btn btn-xs btn-danger del" @click="del(val.room_id)" ><i class="icon-trash bigger-120"></i></button></div><div class="visible-xs visible-sm hidden-md hidden-lg"><div class="inline position-relative"><button data-toggle="dropdown" class="btn btn-minier btn-primary dropdown-toggle"><i class="icon-cog icon-only bigger-110"></i></button><ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close"><li><a title="" data-rel="tooltip" class="tooltip-info" href="#" data-original-title="View"><span class="blue"><i class="icon-zoom-in bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-success" href="#" data-original-title="Edit"><span class="green"><i class="icon-edit bigger-120"></i></span></a></li><li><a title="" data-rel="tooltip" class="tooltip-error" href="#" data-original-title="Delete"><span class="red"><i class="icon-trash bigger-120"></i></span></a></li></ul></div></div></td>
