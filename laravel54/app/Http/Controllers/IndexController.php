@@ -58,6 +58,7 @@ class IndexController extends Controller
 
 		$live=$this->live($type_id);
 //		 print_r($live);die;
+
 		$username=Session::get('user');
 //		print_r($username);die;
 		if (!empty($username)) {
@@ -67,6 +68,7 @@ class IndexController extends Controller
 		}
 //		print_r($er);die;
 //		print_r($data);die;
+
 		return view("index.show",['data'=>$data,'live'=>$live,'er'=>$er]);
 	}
 	//直播房间列表
