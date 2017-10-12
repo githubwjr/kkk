@@ -36,7 +36,9 @@ class IndexController extends Controller
 		//根据id查询分类表
 		$hottype = DB::select("select type_name,type_id from huya_type where type_id in ($ok)");
 		$hottypes = DB::select("select type_name,type_id from huya_type where type_id in ($ok) limit 3");
-		return view('index.index',['res'=>$res,'ress'=>$ress,'hottype'=>$hottype,'hottypes'=>$hottypes,'er'=>$er]);
+		$imgs = DB::select("select room_img from huya_room limit 5");
+//		print_r($imgs);die;
+		return view('index.index',['imgs'=>$imgs,'res'=>$res,'ress'=>$ress,'hottype'=>$hottype,'hottypes'=>$hottypes,'er'=>$er]);
 		//return view('index.index',['name'=>$data]);
 	}
 	public function test($data)
@@ -64,6 +66,7 @@ class IndexController extends Controller
 			$er=array('error'=>0);
 		}
 //		print_r($er);die;
+//		print_r($data);die;
 		return view("index.show",['data'=>$data,'live'=>$live,'er'=>$er]);
 	}
 	//直播房间列表

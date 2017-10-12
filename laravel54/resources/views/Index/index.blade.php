@@ -7,6 +7,11 @@ var UDB_SDK_SWTICH = true;
 
 </script>
 
+{{--swiper start--}}
+<link rel="stylesheet" href="/swiper/swiper.min.css">
+<script src="/swiper/swiper.min.js"></script>
+{{--swiper end--}}
+
     <!-- E 通用头部 -->
 
 
@@ -33,95 +38,125 @@ var UDB_SDK_SWTICH = true;
 
         <div class="mod-index-main" id="js-main">
 
-	<div class="main-hd">
+            <!-- Swiper -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    @foreach($imgs as $k => $v)
+                    <div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})">
+                    </div>
+                    @endforeach
+                    {{--<div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})"></div>--}}
 
-	    <div class="main-player">
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    @foreach($imgs as $k => $v)
+                    <div class="swiper-slide" style="background-image:url(images/{{$v['room_img']}})"></div>
+                    @endforeach
+                    {{--<div class="swiper-slide" style="background-image:url(/swiper/images/02.png)"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(/swiper/images/03.png)"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(/swiper/images/04.png)"></div>--}}
+                    {{--<div class="swiper-slide" style="background-image:url(/swiper/images/05.png)"></div>--}}
+                </div>
+            </div>
+{{--swiper end--}}
 
-	       <div id="index_player"></div>
+	{{--<div class="main-hd">--}}
 
-	    </div>
+	    {{--<div class="main-player">--}}
 
-	</div>
+	       {{--<div id="index_player"></div>--}}
 
-	 <div class="main-bd">
+	    {{--</div>--}}
 
-	    <ul class="item-nav clearfix">
+	{{--</div>--}}
 
-	        	        	            <li recommendSite="1" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/1","game_id":"1","ayyuid":"1346609715"}'>
+	 {{--<div class="main-bd">--}}
 
-	                <div class="item-pic">
+	    {{--<ul class="item-nav clearfix">--}}
 
-	                    <img src="images/home_recommend_live_web_1506141063.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	        	            {{--<li recommendSite="1" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/1","game_id":"1","ayyuid":"1346609715"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1506141063.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	            <li recommendSite="2" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/2","game_id":"2793","ayyuid":"1332412075"}'>
+	                {{--</div>--}}
 
-	                <div class="item-pic">
+	            {{--</li>--}}
 
-	                    <img src="images/home_recommend_live_web_1492746604.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	            {{--<li recommendSite="2" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/2","game_id":"2793","ayyuid":"1332412075"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1492746604.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	            <li recommendSite="3" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/3","game_id":"2411","ayyuid":"1560122351"}'>
+	                {{--</div>--}}
 
-	                <div class="item-pic">
+	            {{--</li>--}}
 
-	                    <img src="images/home_recommend_live_web_1495444307.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	            {{--<li recommendSite="3" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/3","game_id":"2411","ayyuid":"1560122351"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1495444307.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	            <li recommendSite="4" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/4","game_id":"1663","ayyuid":"345233844"}'>
+	                {{--</div>--}}
 
-	                <div class="item-pic">
+	            {{--</li>--}}
 
-	                    <img src="images/home_recommend_live_web_1476009294.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	            {{--<li recommendSite="4" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/4","game_id":"1663","ayyuid":"345233844"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1476009294.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	            <li recommendSite="5" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/5","game_id":"2836","ayyuid":"616142159"}'>
+	                {{--</div>--}}
 
-	                <div class="item-pic">
+	            {{--</li>--}}
 
-	                    <img src="images/home_recommend_live_web_1491978541.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	            {{--<li recommendSite="5" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/5","game_id":"2836","ayyuid":"616142159"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1491978541.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	            <li recommendSite="6" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/6","game_id":"489","ayyuid":"170790054"}'>
+	                {{--</div>--}}
 
-	                <div class="item-pic">
+	            {{--</li>--}}
 
-	                    <img src="images/home_recommend_live_web_1506334323.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">
+	        	            {{--<li recommendSite="6" class="new-clickstat" report='{"eid":"click/position","position":"index/jdt/6","game_id":"489","ayyuid":"170790054"}'>--}}
 
-	                    <div class="highlight"><i class="arrow"></i></div>
+	                {{--<div class="item-pic">--}}
 
-	                </div>
+	                    {{--<img src="images/home_recommend_live_web_1506334323.jpg" alt="虎牙直播" onerror="this.onerror='';this.src='images/default_focus.jpg'">--}}
 
-	            </li>
+	                    {{--<div class="highlight"><i class="arrow"></i></div>--}}
 
-	        	    </ul>
+	                {{--</div>--}}
 
-	</div>
+	            {{--</li>--}}
+
+	        	    {{--</ul>--}}
+
+	{{--</div>--}}
 
 </div>
 
@@ -976,6 +1011,27 @@ require.resourceMap({"res":{"h5player":{"url":"//a.msstatic.com/huya/main/module
 
     </script>
 
+        {{--swiper start--}}
+
+                <!-- Initialize Swiper -->
+        <script>
+            var galleryTop = new Swiper('.gallery-top', {
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                spaceBetween: 10,
+            });
+            var galleryThumbs = new Swiper('.gallery-thumbs', {
+                spaceBetween: 10,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                touchRatio: 0.2,
+                slideToClickedSlide: true
+            });
+            galleryTop.params.control = galleryThumbs;
+            galleryThumbs.params.control = galleryTop;
+
+        </script>
+        {{--swiper end--}}
     <!--BODY_END-->
 
     <!-- S 页面公用功能 -->
