@@ -234,9 +234,36 @@
 								</li>
 								
 								<li>
-									<router-link to="/room_add" class="router-item">
+									<router-link to="/live_add" class="router-item">
 										<i class="icon-double-angle-right"></i>
 										添加主播
+									</router-link>
+								</li>
+								
+							</ul>
+						</li>
+						
+						<li>
+							<a class="dropdown-toggle" href="#">
+								<i class="icon-list"></i>
+								<span class="menu-text"> Echart信息 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								
+								<li>
+									<router-link to="/echart/province" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										注册用户(各省)
+									</router-link>
+								</li>
+								
+								<li>
+									<router-link to="/echart/days" class="router-item">
+										<i class="icon-double-angle-right"></i>
+										注册用户(每天)
 									</router-link>
 								</li>
 								

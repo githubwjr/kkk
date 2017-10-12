@@ -49,9 +49,11 @@ class EchartController extends Controller
     {
 //        echo 1;die;
         $call = \Yii::$app->request->get('call');
+        $add_date = \Yii::$app->request->get('start_time');
         $res = (new \yii\db\Query())->select('region_id,region_name')
             ->from('huya_userinfo')
             ->leftJoin('huya_region','huya_userinfo.info_location = huya_region.region_id')
+            ->where(['add_date'=>$add_date])
             ->groupBy('region_id')
             ->all();
 //        print_r($res);die;

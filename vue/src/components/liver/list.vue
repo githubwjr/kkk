@@ -96,6 +96,7 @@
 													<button class="btn" type="button" @click="end_page">
 														尾页
 													</button>
+													
 												</div>
 										</div><!-- /.table-responsive -->
 									</div><!-- /span -->
@@ -437,4 +438,5 @@ try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 </script>
 
 <style>
+	
 </style>

@@ -46,6 +46,11 @@ import rooms from '@/components/room/rooms'
 import room_add from '@/components/room/room_add'
 import moneys from '@/components/money/moneys'
 import lives from '@/components/liver/list'
+import live_add from '@/components/liver/live_add'
+
+//用户echart分析图
+import echart_province from '@/components/echart/province'
+import echart_days from '@/components/echart/days'
 
 //登录页面
 import login from '@/components/login'
@@ -96,8 +101,21 @@ export default new Router({
     	name:'lives',
     	component:lives
     },
-
-
+		{
+    	path:'/live_add',
+//  	name:'lives',
+    	component:live_add
+    },
+    {
+    	path:'/echart/province',
+//  	name:'lives',
+    	component:echart_province
+    },
+		{
+    	path:'/echart/days',
+//  	name:'lives',
+    	component:echart_days
+    },
 
 
 
