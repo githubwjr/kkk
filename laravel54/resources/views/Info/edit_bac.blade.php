@@ -2,7 +2,7 @@
 @section('content')
 
 	
-    <link rel="stylesheet" href="/css/userinfo_set.css">
+    <link rel="stylesheet" href="./css/userinfo_set.css">
 <!-- <script src="//hm.baidu.com/hm.js?51700b6c722f5bb4cf39906a596ea41f"></script> -->
         <div class="main-col">
             <div class="scroll-content">
@@ -59,29 +59,8 @@
                 		</ul>
 			                		
                 	</form> -->
-                	
                 	<form id="userInfoEdit" class="form-edit" method="post" action="/edit_do">
                 		<ul>
-                			<li>
-								<span class="edit-item">修改头像</span>
-								
-								<input type="file" name="file_upload" id="file_upload"  value="" />
-								<input type="hidden" name="info_head" value="" class="head">
-                			</li>
-                			    <script type="text/javascript">
-								  $(function() {
-								    $('#file_upload').uploadify({
-								      'swf'      : 'uploadify/uploadify.swf',
-								      'uploader' : 'uploadify/uploadify.php',
-								      'onUploadSuccess' : function(file, data, response) {
-								      	
-								          $(".head").val(file.name);
-								          
-								      },
-								       
-								    });
-								  });
-								  </script>
 							<li>
 	                			<span class="edit-item">昵称</span>
 	                			<input id="edit-nick" class="edit-name" type="text" name="user_name" maxlength="20" readonly="readonly" style="border: 0px;" value="{{$res['info_nickname']}}">

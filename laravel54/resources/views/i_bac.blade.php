@@ -7,14 +7,11 @@
         <meta name="Description" content="虎牙直播是国内领先的互动直播平台,900万人同时在线,提供高清、流畅的赛事直播和游戏直播.虎牙包含英雄联盟lol直播、dota2直播、穿越火线cf直播、dnf直播等热门游戏直播以及、美女主播、网络电视">
         <meta name="Keywords" content="lol直播,lol游戏直播,英雄联盟直播,dota2直播,dota直播,dnf直播,cf直播,游戏直播,赛事直播,YY直播,美女主播,虎牙,虎牙直播">
         <title>直播个人中心</title>
-        <link rel="stylesheet" type="text/css" href="uploadify/uploadify.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-  <script type="text/javascript" src="uploadify/jquery.uploadify.min.js"></script>
         <link rel="stylesheet" href="http://assets.dwstatic.com/project/yytv/center/2.9.2/css/admin.css">
         <style type="text/css">
         .main-col{*padding-bottom: 140px;}
         </style>
-        
+        <script type="text/javascript" src="http://i.huya.com/base/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     var eu = '';
     var user = 1;
@@ -35,6 +32,7 @@
 <style>
     #fileImg-queue{position: absolute;z-index: -1;}
 </style>
+<!-- 上传头像 e -->
 
 
 <link href="http://a.msstatic.com/huya/icenter/main/css/new_home_index__9176602.css" rel="stylesheet"/>
@@ -753,7 +751,7 @@
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='';
+                        location.href='/';
                     }
                 }
             })

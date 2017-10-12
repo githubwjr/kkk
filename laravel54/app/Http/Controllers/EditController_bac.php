@@ -22,7 +22,6 @@ class EditController extends Controller
 	}
 	public function edit_do()
 	{
-
 		$user = Session::get('user');
 //		print_r($user_id);die;
 //		$res=DB::table('userinfo')->where('user_id',$user_id)->first();
@@ -30,10 +29,8 @@ class EditController extends Controller
 		$data = $_POST;
 //		print_r($data);
 		$rs=DB::table('userinfo')->where('user_id',$user['user_id'])->update([
-			'info_desc'=>$data['info_desc'],'info_head'=>$data['info_head']
+			'info_desc'=>$data['info_desc'],
 		]);
-		$res=DB::table('userinfo')->where('user_id',$user['user_id'])->first();
-		Session::put('info',$res);
 //		echo "<script>alert('修改成功');</script>";
 		return redirect('info');
 	}
