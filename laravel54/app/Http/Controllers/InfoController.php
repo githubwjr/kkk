@@ -8,7 +8,9 @@ class InfoController extends Controller{
 	public function info(){
 		$username=Session::get('user');
 		// print_r($username);die;
-		
+		$num = [];
+
+		$user = [];
 		if (!empty($username)) {
 			$user_id=$username['user_id'];
 			$er=DB::table('userinfo')->where('user_id',$user_id)->first();

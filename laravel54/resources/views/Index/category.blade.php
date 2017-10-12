@@ -34,7 +34,7 @@
     </a>
 
 </li>
-@endforeach                                                                 
+@endforeach
                                             </ul>
                                     </div>
 

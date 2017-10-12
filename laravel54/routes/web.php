@@ -55,6 +55,7 @@ route::any("index/category",'IndexController@category');
 route::get('login_do','IndexController@login_do');
 route::get("regin",'IndexController@regin');
 route::get('index/logout','IndexController@logout');
+route::any('logout','IndexController@logout');
 route::any("index/details",'IndexController@details');
 route::get("/info",'InfoController@info');
 route::get("/grade",'InfoController@grade');
