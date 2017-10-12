@@ -32,7 +32,7 @@ class EditController extends Controller
 		$rs=DB::table('userinfo')->where('user_id',$user['user_id'])->update([
 			'info_desc'=>$data['info_desc'],'info_head'=>$data['info_head']
 		]);
-		$res=DB::table('userinfo')->where('user_id',$user_name['user_id'])->first();
+		$res=DB::table('userinfo')->where('user_id',$user['user_id'])->first();
 		Session::put('info',$res);
 //		echo "<script>alert('修改成功');</script>";
 		return redirect('info');
