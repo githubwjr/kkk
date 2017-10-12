@@ -202,15 +202,17 @@
                             {{--7组玩命加载中.....--}}
                         {{--</div>--}}
                     {{--</div>--}}
+
                     <ul class="live-list clearfix areafib" id="js-live-list">
                     @foreach($live as $v)
  <li class="game-live-item" gid="1">
 
  <a href="{{URL::asset('index/details')}}" class="video-info new-clickstat" target="_blank" report='{"eid":"click/position","position":"allLive/0/1/1","game_id":"1","ayyuid":"1346609715"}'>
 
-        <img class="pic"  src="/images/<?=$v['room_img']?>" onerror="this.onerror=null; this.src='/images/<?=$v['room_img']?>';" alt="{{$v['room_name']}}" title="{{$v['room_name']}}">
 
-                <div class="item-mask"></div>
+     <img class="pic lazy"  src="/images/load.jpg" data-src="/images/<?=$v['room_img']?>"  alt="{{$v['room_name']}}" title="{{$v['room_name']}}">
+
+     <div class="item-mask"></div>
 
         <i class="btn-link__hover_i"></i>
 
@@ -239,10 +241,67 @@
 
 
 </ul>
+                    {{--lazy load start--}}
+                    <script>
+                        //                        alert(2)
+                        var imgs = document.getElementsByClassName("lazy"); /*懒惰加载图片*/
+                        //                        alert(imgs)
+                        var imgsLen = imgs.length;
+//                        alert(imgsLen)
+                        var unloaded = imgsLen; /*标记还有多少个图片没有加载*/
+                        var clientHight = window.innerHeight || document.documentElement.clientHeight; /*浏览器用户可视窗口高度*/
+
+                        /*给图片设置真正的src*/
+                        function setImgSrc (index) {
+                            imgs[index].src = imgs[index].getAttribute("data-src"); /*取图片真正的地址*/
+                            --unloaded;
+                        }
+
+                        /*滚动事件处理*/
+                        function scrollHandler(index) {
+                            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop; /*滚动离顶部距离*/
+                            for (var i = index; i < imgsLen; i++) {
+                                var offset = imgs[i].offsetTop; /*元素到顶部的偏移量*/
+                                if (scrollTop + clientHight > offset) {
+                                    setImgSrc(i);
+                                } else {
+                                    break;
+                                }
+                            }
+                        }
+
+                        /*监听滚动事件*/
+                        function myScrollListener() {
+                            var start = imgsLen-unloaded; /*查找第一个没有加载的图片的位置*/
+                            if (unloaded > 0) {
+                                scrollHandler(start);
+                            }
+                        }
+
+                        /*第一次加载加载页面的时候加载出现在用户视线里的图片*/
+                        function firstLoad() {
+                            for (var i = 0; i < imgsLen; i++) {
+                                var top = imgs[i].offsetTop;
+                                if (top < clientHight) {/*图片到顶部的位置如果小于客户端可视窗口的高度，则说明图片显示出来了*/
+                                    setImgSrc(i);
+                                }else{
+                                    break;
+                                }
+                            }
+                        }
+
+                        window.onscroll = myScrollListener;
+
+                        window.onload = firstLoad;
+
+
+                    </script>
+                    {{--lazyload end--}}
 @endsection
 <style>
     .duya-header{
         margin-top: -18px;
     }
 </style>
-       
+
+
