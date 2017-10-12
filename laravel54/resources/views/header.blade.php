@@ -24,7 +24,7 @@
 
 <meta name="renderer" content="webkit">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -54,7 +54,7 @@
 
 
 <body>
-        
+
         <script data-fixed="true">var w=document.body.clientWidth;1480>w&&(document.body.className+=" w-1000");</script>
 
         <!-- S 通用头部 -->
@@ -108,7 +108,7 @@
             <div class="duya-header-gg clickstat" id="J_duyaHdGg" eid="click/push/navipic" eid_desc="点击/推荐/顶部导航图片"></div>
 
             <div class="duya-header-control clearfix">
-                
+
                 <div class="hy-nav-right hy-nav-kaibo">
 
                     <a class="hy-nav-title clickstat" href="http://www.huya.com/e/zhubo" eid="click/navi/kaibo" eid_desc="点击/导航/开播" target="_blank">
@@ -241,7 +241,7 @@
 
                                 </div>
 
-                            </div>                            
+                            </div>
 
                         </div>
 
@@ -596,7 +596,7 @@ var UDB_SDK_SWTICH = true;
                     </a>
 
                     <div class="m-bd">
-						
+
                         <div class="recomend-list clearfix">
                         @foreach($v['_child'] as $val)
                             <a class="recomend-item clickstat" eid="click/navi/zuoce/remen1" eid_desc="点击/导航/左侧导航/热门1" href="show?id={{$val['type_id']}}" title="{{$val['type_name']}}">{{$val['type_name']}}</a>
@@ -645,12 +645,12 @@ var UDB_SDK_SWTICH = true;
 
 </div>
 
-              
-               
+
+
         @section('content')
         @show
-        
-       
+
+
     </div>
 
 </div>
@@ -776,7 +776,7 @@ var _hmt = _hmt || [];
 
   hm.src = "{{URL::asset('//hm.baidu.com/hm.js?51700b6c722f5bb4cf39906a596ea41f')}}";
 
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
 
   s.parentNode.insertBefore(hm, s);
 
