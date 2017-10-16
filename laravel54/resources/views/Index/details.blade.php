@@ -58,8 +58,39 @@
 var UDB_SDK_SWTICH = true;
 
 </script>
+{{--Workman start--}}
+<script type="text/javascript">
+    window.onload = function () {
+        var ws = new WebSocket("ws://192.168.206.24:1012");
 
-    <!-- E 通用头部 -->
+//        document.getElementById("msg_send_bt").onclick = function () {
+        var send2 = function(){
+            var msg = document.getElementById("messages").value;
+             alert(msg)
+            // var data='{"type":"message","msg":"'+msg+'}';
+            var data = msg
+            // console.log(data)
+            ws.send(data);
+        };
+
+        ws.onopen = function () {
+            console.log("连接成功");
+//            ws.send('raid');
+        };
+        ws.onclose = function (e)
+        {
+            // console.log('信息',e)
+            alert(e)
+        }
+        ws.onmessage = function (e) {
+            document.getElementById("content2").innerHTML += "<h2>" + e.data + "</h2>";
+        };
+
+
+    };
+</script>
+{{--workman end--}}
+<!-- E 通用头部 -->
 
     
 
@@ -253,9 +284,9 @@ var UDB_SDK_SWTICH = true;
 
         <div class="week-rank__hd clearfix" >
 
-            <span class="week-rank__btn active">频道一</span>
+            <span class="week-rank__btn active" atr="1">频道一</span>
 
-            <span class="week-rank__btn">频道二</span>
+            <span class="week-rank__btn" atr="2">频道二</span>
 
             <span class="week-rank__btn">带盐团</span>
             @foreach($name as $v)
@@ -290,8 +321,17 @@ var UDB_SDK_SWTICH = true;
 
                 <ul id="fans-list">
 
-                    <div class="week-rank" style="margin-left:35%;margin-top:10%">
-                        <span style="font-family:华文行楷;font-size:26px">暂未开通</span>
+                    <div class="week-rank" style="margin-left:10%;margin-top:10%">
+                        <span style="font-family:华文行楷;font-size:26px">您现在进入的是频道二</span>
+                        {{--<span style="font-family:华文行楷;font-size:26px">暂未开通</span>--}}
+                            {{--<div style="width:600px;margin:0 auto;border:1px solid #ccc;">--}}
+                            {{--<div id="content" style="overflow-y:auto;height:300px;"></div>--}}
+                            {{--<hr/>--}}
+                            {{--<div style="height:40px">--}}
+                            {{--<input type="text" id="message" style="margin-left:10px;height:25px;width:450px;">--}}
+                            {{--<button onclick="sendMessage()" style="height:28px;width:75px;">发送</button>--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
                     </div>
 
                 </ul>
@@ -309,9 +349,17 @@ var UDB_SDK_SWTICH = true;
     </div>
 {{--Swoole start--}}
         <script type="text/javascript">
-            if(window.WebSocket){
-                var webSocket = new WebSocket("ws://114.67.136.68:9512");
+            window.onload = function () {
 
+            }
+            if(window.WebSocket){
+                /*Swoole*/
+                var webSocket = new WebSocket("ws://114.67.136.68:9512");
+                /*Workman*/
+                var ws = new WebSocket("ws://192.168.206.23:1012");
+                ws.onmessage = function (e) {
+                    document.getElementById("content2").innerHTML += "<h2>" + e.data + "</h2>";
+                };
                 webSocket.onopen = function (event) {
                     //webSocket.send("Hello,WebSocket!");
                 };
@@ -323,17 +371,31 @@ var UDB_SDK_SWTICH = true;
                 var sendMessage = function(){
 //                    var data = document.getElementById('message').value;
 //                    console.log(data)
-                    var data = $('#messages').val()
+                    var rt = $('.active').attr('atr')
+//                    alert(rt)
+//                    Swoole通信
+//                    alert(2)
+                    if(rt == 1) {
+
+                        var data = $('#messages').val()
 //                    var channel = $('.week-rank__btn active').val();
 //                    alert(channel);
-                    if(data == '')
-                    {
-                        alert('不能发送空内容')
+                        if (data == '') {
+                            alert('不能发送空内容')
+                        }
+//                      Workman通信
+                        else {
+                        $('#messages').val('')
+                            webSocket.send(data);
+
+                        }
                     }
-                    else
-                    {
-//                        $('#messages').val('')
-                        webSocket.send(data);
+                    else {
+                        var msg = document.getElementById("messages").value;
+                        $('#messages').val('')
+//                        alert(msg)
+                        ws.send(msg);
+
                     }
                 }
             }else{
@@ -348,8 +410,9 @@ var UDB_SDK_SWTICH = true;
 
         <div class="chat-room" id="chatRoom">
             <div style="width:100%;height:100%;margin:0 auto;border:1px solid #ccc;">
-                <div id="content" style="overflow-y:auto;height:240px;"></div>
+                <div id="content" style="overflow-y:auto;height:120px;"></div>
                 <hr/>
+                <div id="content2" style="overflow-y:auto;height:120px;"></div>
 
 
             </div>

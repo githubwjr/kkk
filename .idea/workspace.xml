@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e8bb5ca9-f073-45f6-9569-b021d0fc25e8" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/public/workman/start.php" afterPath="$PROJECT_DIR$/laravel54/public/workman/start.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" />
     </list>
     <ignored path="kkk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +39,7 @@
       <file leaf-file-name="InfoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="12.75">
               <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <marker date="1507795468591" expanded="true" signature="509:563" placeholder="SELECT regio... huya_region" />
@@ -46,14 +48,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.72692305">
-              <caret line="293" column="73" selection-start-line="293" selection-start-column="73" selection-end-line="293" selection-end-column="73" />
+            <state vertical-scroll-proportion="-3.6969697">
+              <caret line="373" column="32" selection-start-line="373" selection-start-column="32" selection-end-line="373" selection-end-column="32" />
               <folding>
-                <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="3354:3528" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="3750:4528" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="3885:4162" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="4199:4272" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="4308:4384" placeholder="{...}" />
+                <marker date="1508136122648" expanded="true" signature="4422:4519" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="12407:14288" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="12806:12881" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="12940:13173" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="13087:13133" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="13221:14274" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="13724:13797" placeholder="{...}" />
+                <marker date="1508136122648" expanded="true" signature="13860:13986" placeholder="{...}" />
+                <marker date="1508136122648" expanded="true" signature="14294:14357" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="19241:19449" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="19252:19448" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="19283:19432" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="19299:19431" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="19339:19417" placeholder="..." />
+                <marker date="1508136122648" expanded="true" signature="42385:44147" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.7938776">
+              <caret line="174" column="12" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,6 +153,7 @@
         <option value="$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/details2.blade.php" />
+        <option value="$PROJECT_DIR$/laravel54/storage/framework/views/5a3230351c1dbd39f7e355cb8574dc3b34d5d194.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" />
       </list>
     </option>
@@ -136,9 +168,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="45" />
-    <option name="width" value="1378" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -166,7 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -484,6 +515,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -634,10 +666,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="45" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30500758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -693,10 +725,19 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Info/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="721" column="22" selection-start-line="721" selection-start-column="22" selection-end-line="721" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,13 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/storage/framework/views/55b9fecea7c943325f4edcea8ff86f3cb44deebd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -885,13 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/storage/framework/views/55b9fecea7c943325f4edcea8ff86f3cb44deebd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6598778">
-          <caret line="42" column="104" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
         </state>
       </provider>
     </entry>
@@ -979,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0531915">
-          <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="167" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/EditController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.03125">
@@ -1022,10 +1042,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/head.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <caret line="668" column="41" selection-start-line="668" selection-start-column="41" selection-end-line="668" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1038,17 +1058,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/head.blade.php">
+    <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="668" column="41" selection-start-line="668" selection-start-column="41" selection-end-line="668" selection-end-column="41" />
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/storage/framework/views/500f7a4d00a1f81e04edac71ab8cf2f7229b4f04.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3776908">
+          <caret line="683" column="7" selection-start-line="683" selection-start-column="7" selection-end-line="683" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="12.75">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
             <marker date="1507795468591" expanded="true" signature="509:563" placeholder="SELECT regio... huya_region" />
@@ -1058,11 +1085,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.72692305">
-          <caret line="293" column="73" selection-start-line="293" selection-start-column="73" selection-end-line="293" selection-end-column="73" />
+        <state vertical-scroll-proportion="-3.6969697">
+          <caret line="373" column="32" selection-start-line="373" selection-start-column="32" selection-end-line="373" selection-end-column="32" />
           <folding>
-            <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="3354:3528" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="3750:4528" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="3885:4162" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="4199:4272" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="4308:4384" placeholder="{...}" />
+            <marker date="1508136122648" expanded="true" signature="4422:4519" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="12407:14288" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="12806:12881" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="12940:13173" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="13087:13133" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="13221:14274" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="13724:13797" placeholder="{...}" />
+            <marker date="1508136122648" expanded="true" signature="13860:13986" placeholder="{...}" />
+            <marker date="1508136122648" expanded="true" signature="14294:14357" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="19241:19449" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="19252:19448" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="19283:19432" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="19299:19431" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="19339:19417" placeholder="..." />
+            <marker date="1508136122648" expanded="true" signature="42385:44147" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7938776">
+          <caret line="174" column="12" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
