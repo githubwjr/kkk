@@ -57,6 +57,8 @@ route::get("regin",'IndexController@regin');
 route::get('index/logout','IndexController@logout');
 route::any('logout','IndexController@logout');
 route::any("index/details",'IndexController@details');
+route::any('dfa/input','Dfa@input');
+route::any('/edit/input','EditController@input');
 route::get("/info",'InfoController@info');
 route::get("/grade",'InfoController@grade');
 route::get("/history",'InfoController@history');

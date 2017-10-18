@@ -3,9 +3,45 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
 use Session;
+
 class EditController extends Controller
 {
+	public function input()
+	{
+//		require('dfa.php');
+//		echo 2;die;
+//		$msg = $_GET['msg'];
+//		echo $msg;die;
+//		echo $txt = Input::get('msg');die;
+
+		//干扰因子集合
+		$disturbList = ['&', '*','#'];
+
+		//敏感词汇集合
+		$data = ['19','大'];
+
+		//实例化类
+		$wordObj = new Dfa($disturbList);
+
+		//添加敏感词汇
+		$wordObj->addWords($data);
+
+		// //要检测的文字
+//		$txt = "1923456";
+		$txt = Input::get('msg');
+//		echo $txt;die;
+
+		// //查找对应敏感词
+		$words = $wordObj->search($txt);
+		// print_r($words);
+
+		//替换过后的文字显示
+		$txt = $wordObj->filter($txt);
+		echo $txt, "\n";
+
+	}
 	public function edit()
 	{
 		$user=Session::get('user');

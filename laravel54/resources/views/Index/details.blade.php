@@ -386,7 +386,23 @@ var UDB_SDK_SWTICH = true;
 //                      Workman通信
                         else {
                         $('#messages').val('')
-                            webSocket.send(data);
+//                            alert(data);
+                            $.ajax({
+                                type:'get',
+                                url:'/edit/input',
+                                data:{msg:data},
+                                success:function(data)
+                                {
+//                                    alert(data)
+                                    webSocket.send(data);
+                                },
+                                error:function(msg)
+                                {
+//                                    alert(msg)
+                                    console.log(msg)
+                                }
+                            })
+//                            webSocket.send(data);
 
                         }
                     }
