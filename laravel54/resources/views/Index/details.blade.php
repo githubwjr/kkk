@@ -253,9 +253,9 @@ var UDB_SDK_SWTICH = true;
 
         <div class="week-rank__hd clearfix" >
 
-            <span class="week-rank__btn active">周贡榜</span>
+            <span class="week-rank__btn active">频道一</span>
 
-            <span class="week-rank__btn">粉丝榜</span>
+            <span class="week-rank__btn">频道二</span>
 
             <span class="week-rank__btn">带盐团</span>
             @foreach($name as $v)
@@ -270,7 +270,17 @@ var UDB_SDK_SWTICH = true;
 
                 <ul id="week-rank-list">
 
-                    <div class="week-rank-loading"></div>      
+                    <div class="week-rank" style="margin-left:10%;margin-top:10%">
+                        <span style="font-family:华文行楷;font-size:26px">您现在进入的是频道一</span>
+                        {{--<div style="width:600px;margin:0 auto;border:1px solid #ccc;">--}}
+                            {{--<div id="content" style="overflow-y:auto;height:300px;"></div>--}}
+                            {{--<hr/>--}}
+                            {{--<div style="height:40px">--}}
+                                {{--<input type="text" id="message" style="margin-left:10px;height:25px;width:450px;">--}}
+                                {{--<button onclick="sendMessage()" style="height:28px;width:75px;">发送</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    </div>
 
                 </ul>
 
@@ -280,7 +290,9 @@ var UDB_SDK_SWTICH = true;
 
                 <ul id="fans-list">
 
-                    <div class="week-rank-loading"></div>      
+                    <div class="week-rank" style="margin-left:35%;margin-top:10%">
+                        <span style="font-family:华文行楷;font-size:26px">暂未开通</span>
+                    </div>
 
                 </ul>
 
@@ -295,20 +307,60 @@ var UDB_SDK_SWTICH = true;
         </div>
 
     </div>
+{{--Swoole start--}}
+        <script type="text/javascript">
+            if(window.WebSocket){
+                var webSocket = new WebSocket("ws://114.67.136.68:9512");
 
+                webSocket.onopen = function (event) {
+                    //webSocket.send("Hello,WebSocket!");
+                };
+                webSocket.onmessage = function (event) {
+                    var content = document.getElementById('content');
+                    content.innerHTML = content.innerHTML.concat('<p style="margin-left:20px;height:20px;line-height:20px;">'+event.data+'</p>');
+                }
+
+                var sendMessage = function(){
+//                    var data = document.getElementById('message').value;
+//                    console.log(data)
+                    var data = $('#messages').val()
+//                    var channel = $('.week-rank__btn active').val();
+//                    alert(channel);
+                    if(data == '')
+                    {
+                        alert('不能发送空内容')
+                    }
+                    else
+                    {
+//                        $('#messages').val('')
+                        webSocket.send(data);
+                    }
+                }
+            }else{
+                console.log("您的浏览器不支持WebSocket");
+            }
+        </script>
+
+{{--Swoole end--}}
 <!-- 周贡献榜e --> 
 
 
 
         <div class="chat-room" id="chatRoom">
+            <div style="width:100%;height:100%;margin:0 auto;border:1px solid #ccc;">
+                <div id="content" style="overflow-y:auto;height:240px;"></div>
+                <hr/>
 
-    <div class="chat-room__hd tab_size_1">
-
-        <span class="chat-room__tab" tab_index="3">互动聊天</span>
-
-                                 
 
             </div>
+
+    {{--<div class="chat-room__hd tab_size_1">--}}
+
+        {{--<span class="chat-room__tab" tab_index="3">互动聊天</span>--}}
+
+                                 {{----}}
+
+            {{--</div>--}}
 
     <div class="chat-room__bd chat-room__panel chat-room__bd3">
 
@@ -326,15 +378,15 @@ var UDB_SDK_SWTICH = true;
 
             </div>
 
-            <div class="chat-room__wrap" id="chat-room__wrap">
+            {{--<div class="chat-room__wrap" id="chat-room__wrap">--}}
 
-                <ul class="chat-room__list" id="chat-room__list">
+                {{--<ul class="chat-room__list" id="chat-room__list">--}}
 
-                    
+                    {{----}}
 
-                </ul>
+                {{--</ul>--}}
 
-            </div>
+            {{--</div>--}}
 
         </div>
 
@@ -454,11 +506,11 @@ var UDB_SDK_SWTICH = true;
 
         <div class="room-chat-tools">
 
-            <i class="room-chat-tool room-chat-tool-smile" id="J_inputEmot"></i>
+            {{--<i class="room-chat-tool room-chat-tool-smile" id="J_inputEmot"></i>--}}
 
-            <i class="room-chat-tool room-chat-tool-color" id="J-room-chat-color"></i>
+            {{--<i class="room-chat-tool room-chat-tool-color" id="J-room-chat-color"></i>--}}
 
-            <i class="room-chat-tool room-chat-tool-font" id="J-room-chat-font"></i>
+            {{--<i class="room-chat-tool room-chat-tool-font" id="J-room-chat-font"></i>--}}
 
         </div>
 
@@ -492,14 +544,26 @@ var UDB_SDK_SWTICH = true;
 
             <div class="msg-input">
 
-                <textarea rows="2" id="pub_msg_input"></textarea>
+                <textarea rows="2" id="messages"></textarea>
 
             </div>
+            <span class="btn-sendMsg hiido_stat" onclick="sendMessage()" id="msg_send_bt" hiido_code="10004279">发送</span>
 
-            <div class="no-login-tip" style="display:none"><span>登录</span>发弹幕，免费领银豆！</div>
+            {{--<div class="no-login-tip" style="display:none"><span>登录</span>发弹幕，免费领银豆！</div>--}}
+            {{--<input type="text" id="messages" style="margin-left:10px;height:25px;width: 240px;px;">--}}
+            {{--<button onclick="sendMessage()" style="height:28px;width:30px;">发送</button>--}}
 
-            <span class="btn-sendMsg hiido_stat" id="msg_send_bt" hiido_code="10004279">发送</span>
+            <script>
+            $(function(){
+            $(document).keyup(function(event){
+            if (event.keyCode == "13"){
+//            alert('你按下了CTRL+C');
+                sendMessage()
+            }
+            });
 
+            });
+            </script>
         </div>
 
     </div>

@@ -662,11 +662,11 @@ var _hmt = _hmt || [];
            
             $.ajax({
                 type:'get',
-                url:'index/logout',
+                url:'logout',
                 success:function(o){
                     if (o==1) {
                         alert("退出成功");
-                        location.href='index';
+                        location.href='/index';
                     }
                 }
             })

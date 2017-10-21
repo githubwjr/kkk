@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e8bb5ca9-f073-45f6-9569-b021d0fc25e8" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php" afterPath="$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/Index/category.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/Index/category.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/header2.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/header2.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/i.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/i.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/routes/web.php" afterPath="$PROJECT_DIR$/laravel54/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" />
     </list>
     <ignored path="kkk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +29,63 @@
       <file leaf-file-name="category.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/category.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2272727">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InfoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.45762712">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <marker date="1507795468591" expanded="true" signature="509:563" placeholder="SELECT regio... huya_region" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.4307692">
+              <caret line="293" column="70" selection-start-line="293" selection-start-column="70" selection-end-line="293" selection-end-column="70" />
+              <folding>
+                <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel54/resources/views/head.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="668" column="41" selection-start-line="668" selection-start-column="41" selection-end-line="668" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Info/info.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="721" column="22" selection-start-line="721" selection-start-column="22" selection-end-line="721" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,7 +108,6 @@
       <list>
         <option value="$PROJECT_DIR$/Yii/frontend/controllers/LiverController.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/show.blade_bac.php" />
-        <option value="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/index.blade.php" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/register.blade.php" />
         <option value="$PROJECT_DIR$/Yii/frontend/controllers/EchartController.php" />
@@ -84,6 +122,9 @@
         <option value="$PROJECT_DIR$/laravel54/public/datatable/jq.js" />
         <option value="$PROJECT_DIR$/laravel54/resources/views/Index/category.blade.php" />
         <option value="$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php" />
+        <option value="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" />
+        <option value="$PROJECT_DIR$/laravel54/resources/views/Index/details2.blade.php" />
+        <option value="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" />
       </list>
     </option>
   </component>
@@ -97,10 +138,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="48" />
-    <option name="y" value="23" />
-    <option name="width" value="1378" />
-    <option name="height" value="725" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="添加" />
@@ -127,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -156,6 +198,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel54" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel54" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel54" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel54" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,12 +486,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="S:/WWW/classroom/do/fight/yii" />
+    <property name="last_opened_file_path" value="S:/WWW/classroom/do/laravel_sign" />
     <property name="js-jscs-nodeInterpreter" value="S:\Nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
@@ -510,7 +617,13 @@
       <option name="project" value="LOCAL" />
       <updated>1507789278186</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="bug 修改">
+      <created>1507795645055</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1507795645055</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -523,15 +636,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="23" width="1378" height="725" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27921093" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30408472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -540,6 +652,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -574,7 +687,8 @@
     <MESSAGE value="uploadify 头像无刷新上传 付雪松上传" />
     <MESSAGE value="Laravel样式微调整,配合瀑布流展示调整" />
     <MESSAGE value="Bug修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug修改" />
+    <MESSAGE value="bug 修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug 修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -585,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#11028#11201#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -640,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="28" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,28 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-          <folding>
-            <marker date="1507786408085" expanded="true" signature="219:244" placeholder="select * fro... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="393:472" placeholder="select user_... huya_user" />
-            <marker date="1507786408085" expanded="true" signature="497:546" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="572:619" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="656:691" placeholder="select ancho... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="981:1043" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1073:1143" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1169:1189" placeholder="select room_... " />
-            <marker date="1507786408085" expanded="true" signature="1169:1207" placeholder="select room_... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="1608:1657" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2145:2209" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2251:2302" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2370:2416" placeholder="SELECT type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2515:2563" placeholder="SELECT user_... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="2609:2651" placeholder="SELECT * FRO... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="3340:3389" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="3474:3518" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="6093:6155" placeholder="select user_... huya_user_anchor" />
-            <marker date="1507786408085" expanded="true" signature="6370:6452" placeholder="select user_... huya_money" />
-            <marker date="1507786408085" expanded="true" signature="6648:6708" placeholder="select user_... huya_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,28 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1507786408085" expanded="true" signature="219:244" placeholder="select * fro... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="393:472" placeholder="select user_... huya_user" />
-            <marker date="1507786408085" expanded="true" signature="497:546" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="572:619" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="656:691" placeholder="select ancho... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="981:1043" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1073:1143" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1169:1189" placeholder="select room_... " />
-            <marker date="1507786408085" expanded="true" signature="1169:1207" placeholder="select room_... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="1608:1657" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2145:2209" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2251:2302" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2370:2416" placeholder="SELECT type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2515:2563" placeholder="SELECT user_... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="2609:2651" placeholder="SELECT * FRO... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="3340:3389" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="3474:3518" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="6093:6155" placeholder="select user_... huya_user_anchor" />
-            <marker date="1507786408085" expanded="true" signature="6370:6452" placeholder="select user_... huya_money" />
-            <marker date="1507786408085" expanded="true" signature="6648:6708" placeholder="select user_... huya_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,18 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="652" column="24" selection-start-line="652" selection-start-column="23" selection-end-line="652" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/storage/framework/views/55b9fecea7c943325f4edcea8ff86f3cb44deebd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6598778">
           <caret line="42" column="104" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,19 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0924855">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24847251">
           <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.3410404">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8323699">
           <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.171875">
           <caret line="805" column="7" selection-start-line="805" selection-start-column="7" selection-end-line="805" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,9 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.416667">
           <caret line="88" column="127" selection-start-line="88" selection-start-column="127" selection-end-line="88" selection-end-column="127" />
-          <folding>
-            <element signature="e#11028#11201#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -931,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="64.5">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,28 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0531915">
           <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="167" selection-end-column="34" />
-          <folding>
-            <marker date="1507786408085" expanded="true" signature="219:244" placeholder="select * fro... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="393:472" placeholder="select user_... huya_user" />
-            <marker date="1507786408085" expanded="true" signature="497:546" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="572:619" placeholder="select info_... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="656:691" placeholder="select ancho... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="981:1043" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1073:1143" placeholder="select type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="1169:1189" placeholder="select room_... " />
-            <marker date="1507786408085" expanded="true" signature="1169:1207" placeholder="select room_... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="1608:1657" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2145:2209" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2251:2302" placeholder="SELECT * FRO... huya_room" />
-            <marker date="1507786408085" expanded="true" signature="2370:2416" placeholder="SELECT type_... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="2515:2563" placeholder="SELECT user_... huya_anchor" />
-            <marker date="1507786408085" expanded="true" signature="2609:2651" placeholder="SELECT * FRO... huya_userinfo" />
-            <marker date="1507786408085" expanded="true" signature="3340:3389" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="3474:3518" placeholder="select * fro... huya_type" />
-            <marker date="1507786408085" expanded="true" signature="6093:6155" placeholder="select user_... huya_user_anchor" />
-            <marker date="1507786408085" expanded="true" signature="6370:6452" placeholder="select user_... huya_money" />
-            <marker date="1507786408085" expanded="true" signature="6648:6708" placeholder="select user_... huya_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -976,23 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.03125">
           <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Info/info.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45010182">
           <caret line="751" column="22" selection-start-line="751" selection-start-column="22" selection-end-line="751" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33188722">
           <caret line="95" column="59" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,26 +1013,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24324325">
           <caret line="5" column="28862" selection-start-line="5" selection-start-column="28862" selection-end-line="5" selection-end-column="28862" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2272727">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Info/info.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="721" column="22" selection-start-line="721" selection-start-column="22" selection-end-line="721" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="668" column="41" selection-start-line="668" selection-start-column="41" selection-end-line="668" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/app/Http/Controllers/InfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.45762712">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
             <marker date="1507795468591" expanded="true" signature="509:563" placeholder="SELECT regio... huya_region" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4307692">
+          <caret line="293" column="70" selection-start-line="293" selection-start-column="70" selection-end-line="293" selection-end-column="70" />
+          <folding>
+            <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
           </folding>
         </state>
       </provider>
