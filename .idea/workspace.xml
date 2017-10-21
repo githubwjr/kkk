@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8bb5ca9-f073-45f6-9569-b021d0fc25e8" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" afterPath="$PROJECT_DIR$/laravel54/resources/views/head.blade.php" />
     </list>
     <ignored path="kkk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="details.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4307692">
-              <caret line="293" column="70" selection-start-line="293" selection-start-column="70" selection-end-line="293" selection-end-column="70" />
+            <state vertical-scroll-proportion="-0.72692305">
+              <caret line="293" column="73" selection-start-line="293" selection-start-column="73" selection-end-line="293" selection-end-column="73" />
               <folding>
                 <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
               </folding>
@@ -138,9 +136,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="x" value="43" />
+    <option name="y" value="45" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -636,10 +634,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="43" y="45" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30408472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30500758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1060,8 +1058,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel54/resources/views/Index/details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4307692">
-          <caret line="293" column="70" selection-start-line="293" selection-start-column="70" selection-end-line="293" selection-end-column="70" />
+        <state vertical-scroll-proportion="-0.72692305">
+          <caret line="293" column="73" selection-start-line="293" selection-start-column="73" selection-end-line="293" selection-end-column="73" />
           <folding>
             <marker date="1508583501655" expanded="true" signature="11123:11169" placeholder="..." />
           </folding>
